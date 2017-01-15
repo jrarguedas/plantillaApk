@@ -41,6 +41,12 @@ public class MainActivity extends AppCompatActivity {
 
     }
 
+    @Override
+    public void onBackPressed() {
+        PopUps popUp = new PopUps();
+        popUp.popUpSalir(this);
+    }
+
 
 
 
