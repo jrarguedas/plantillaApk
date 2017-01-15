@@ -2,4 +2,8 @@
     <string name="app_name">PlantillaAPK</string>
     <string name="action_settings">Settings</string>
     <string name="section_format">Hello World from section: %1$d</string>
+    <string name="NombreRadio">Al Radio</string>
+    <string name="Version">Version</string>
+    <string name="NumVersion">1.0</string>
+    <string name="DescripcionLogo">Representa el logo de cada emisora</string>
 </resources>
