@@ -15,30 +15,53 @@ public class Stream {
     MediaPlayer mediaPlayer;
     Uri radioUrl;
 
-    public Stream(MediaPlayer mediaPlayer) {
-        this.mediaPlayer = new MediaPlayer();
+    public Stream(String url, Context context) throws IOException {
+        inicializar(url,context);
+
     }
 
-    public void inicializar(MediaPlayer mediaPlayer, String url, Context context) throws IOException {
+    public void inicializar(String url, Context context) throws IOException {
+        mediaPlayer = new MediaPlayer();
         radioUrl = Uri.parse(url);
         mediaPlayer.setDataSource(context, radioUrl);
         mediaPlayer.setAudioStreamType(AudioManager.STREAM_MUSIC);
         mediaPlayer.prepare();
     }
 
-    public void play(MediaPlayer mediaPlayer){
-        mediaPlayer.start();
+    public void destruir(){
+        if(mediaPlayer != null){
+            mediaPlayer.release();
+            mediaPlayer =null;
+        }
     }
 
-    public void pause(MediaPlayer mediaPlayer){
-        mediaPlayer.pause();
+    public void play(String url,Context context) throws IOException {
+        if (!estado()){
+            destruir();
+            inicializar(url, context);
+            mediaPlayer.start();
+        }
+
     }
 
-    public void stop(MediaPlayer mediaPlayer){
-        mediaPlayer.stop();
+    public void pause(){
+        if(mediaPlayer!=null && estado()){
+            mediaPlayer.pause();
+        }
+
     }
 
-    public boolean estado(MediaPlayer mediaPlayer){
+    public void stop(){
+        if (mediaPlayer!=null){
+            mediaPlayer.stop();
+            reset();
+        }
+    }
+    public void reset(){
+        mediaPlayer.reset();
+    }
+
+    public boolean estado(){
         if (mediaPlayer.isPlaying()){
             return true;
         }
