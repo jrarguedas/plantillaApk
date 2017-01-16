@@ -19,18 +19,6 @@
             android:contentDescription="@string/DescripcionLogo" />
 
         <TextView
-            android:text="@string/NombreRadio"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_below="@+id/imageView2"
-            android:layout_centerHorizontal="true"
-            android:layout_marginTop="42dp"
-            android:id="@+id/textoNombre"
-            android:textAppearance="@style/TextAppearance.AppCompat.Light.SearchResult.Title"
-            android:textSize="30sp"
-            android:textStyle="normal|bold" />
-
-        <TextView
             android:text="@string/Version"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
@@ -47,5 +35,17 @@
             android:layout_centerHorizontal="true"
             android:layout_marginBottom="13dp"
             android:id="@+id/textoNumVersion" />
+
+        <TextView
+            android:text="@string/NombreRadio"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="55dp"
+            android:id="@+id/textoNombre"
+            android:textAppearance="@style/TextAppearance.AppCompat.Light.SearchResult.Title"
+            android:textSize="30sp"
+            android:textStyle="normal|bold"
+            android:layout_below="@+id/presentacionLogo"
+            android:layout_centerHorizontal="true" />
 
 </RelativeLayout>

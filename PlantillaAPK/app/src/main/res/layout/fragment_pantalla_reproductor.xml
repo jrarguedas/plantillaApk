@@ -4,6 +4,57 @@
     android:orientation="vertical" android:layout_width="match_parent"
     android:layout_height="match_parent">
 
+    <ImageButton android:id="@+id/pause"
+        android:layout_height="50dp"
+        android:layout_width="50dp"
+        android:src="@drawable/ic_reproductor_pause"
+        android:layout_alignTop="@+id/stop"
+        android:layout_toLeftOf="@+id/play"
+        android:layout_toStartOf="@+id/play"
+        android:layout_marginRight="18dp"
+        android:layout_marginEnd="18dp"
+        android:contentDescription="" />
+
+    <ImageView
+        android:id="@+id/image_reproductor"
+        android:contentDescription="@string/DescripcionImgReproductor"
+        android:adjustViewBounds="false"
+        android:cropToPadding="false"
+        android:background="@drawable/fondo4"
+        android:layout_width="250dp"
+        android:layout_height="200dp"
+        android:layout_marginTop="37dp"
+        android:layout_alignParentTop="true"
+        android:layout_centerHorizontal="true" />
+
+    <SeekBar
+        android:id="@+id/seekBar1"
+        android:layout_width="300dp"
+        android:layout_height="wrap_content"
+        android:max="10"
+        android:layout_below="@+id/image_reproductor"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="26dp" />
+
+    <ImageButton android:id="@+id/stop"
+        android:layout_height="50dp"
+        android:src="@drawable/ic_reproductor_stop"
+        android:layout_width="50dp"
+        android:layout_below="@+id/seekBar1"
+        android:layout_alignRight="@+id/image_reproductor"
+        android:layout_alignEnd="@+id/image_reproductor"
+        android:layout_marginRight="16dp"
+        android:layout_marginEnd="16dp"
+        android:layout_marginTop="46dp" />
+
+    <ImageButton android:id="@+id/play"
+        android:src="@drawable/ic_reproductor_play"
+        android:layout_width="80dp"
+        android:layout_height="80dp"
+        android:layout_below="@+id/seekBar1"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="34dp" />
+
     <TextView
         android:text="@string/solicitud"
         android:layout_width="wrap_content"

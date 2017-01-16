@@ -10,5 +10,5 @@
     <string name="DescripcionLogo">Representa el logo de cada emisora</string>
     <string name="textview">TextView</string>
     <string name="solicitud"><a href="https://codigosur.org/forms/membresia-radial/">¡Solicita aquí tu streaming!</a> </string>
-
+    <string name="DescripcionImgReproductor">Representa el logo del reproductor</string>
 </resources>
