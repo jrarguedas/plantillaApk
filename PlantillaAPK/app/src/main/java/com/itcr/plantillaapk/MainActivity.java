@@ -3,6 +3,7 @@ package com.itcr.plantillaapk;
 import android.support.design.widget.FloatingActionButton;
 import android.support.design.widget.Snackbar;
 import android.support.v7.app.AppCompatActivity;
+import android.support.v7.widget.RecyclerView;
 import android.support.v7.widget.Toolbar;
 
 import android.support.v4.app.Fragment;
@@ -20,34 +21,30 @@ import android.widget.TextView;
 
 public class MainActivity extends AppCompatActivity {
 
-    private SectionsPagerAdapter mSectionsPagerAdapter;
+    private AdaptadorPagina adaptadorPagina;
 
-    private ViewPager mViewPager;
+    private ViewPager vistaPagina;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
-        Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
-        setSupportActionBar(toolbar);
+        Toolbar barraTareas = (Toolbar) findViewById(R.id.toolbar);
+
+        setSupportActionBar(barraTareas);
         // Create the adapter that will return a fragment for each of the three
         // primary sections of the activity.
-        mSectionsPagerAdapter = new SectionsPagerAdapter(getSupportFragmentManager());
+        adaptadorPagina = new AdaptadorPagina(getSupportFragmentManager());
 
         // Set up the ViewPager with the sections adapter.
-        mViewPager = (ViewPager) findViewById(R.id.container);
-        mViewPager.setAdapter(mSectionsPagerAdapter);
+        vistaPagina = (ViewPager) findViewById(R.id.container);
+        vistaPagina.setAdapter(adaptadorPagina);
 
     }
 
     @Override
     public void onBackPressed() {
-        PopUps popUp = new PopUps();
-        popUp.popUpSalir(this);
+        new Alerta().alertaSalir(this);
     }
-
-
-
-
 }

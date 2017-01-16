@@ -5,6 +5,8 @@ import android.support.v4.app.Fragment;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.ImageView;
+import android.widget.ScrollView;
 import android.widget.TextView;
 
 /**
@@ -18,20 +20,21 @@ public class Informacion extends Fragment {
 
     }
 
-    public static PlaceholderFragment newInstance(int sectionNumber) {
-        PlaceholderFragment fragment = new PlaceholderFragment();
+    public static Informacion newInstance(int sectionNumber) {
+        Informacion informacion = new Informacion();
         Bundle args = new Bundle();
         args.putInt(ARG_SECTION_NUMBER, sectionNumber);
-        fragment.setArguments(args);
-        return fragment;
+        informacion.setArguments(args);
+        return informacion;
     }
 
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
-        View rootView = inflater.inflate(R.layout.informacion, container, false);
-        TextView textView = (TextView) rootView.findViewById(R.id.section_label);
-        textView.setText(getString(R.string.section_format, getArguments().getInt(ARG_SECTION_NUMBER)));
-        return rootView;
+        View vistaRaiz = inflater.inflate(R.layout.fragment_pantalla_informacion, container, false);
+        ScrollView vistaScroll = (ScrollView) vistaRaiz.findViewById(R.id.informacionVistaScroll);
+        ImageView vistaImagen = (ImageView) vistaRaiz.findViewById(R.id.imagenLogo);
+        TextView vistaTexto = (TextView) vistaRaiz.findViewById(R.id.textoVisitanos);
+        return vistaRaiz;
     }
 }

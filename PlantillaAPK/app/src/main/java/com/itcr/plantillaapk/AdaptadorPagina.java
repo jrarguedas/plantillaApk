@@ -4,18 +4,21 @@ import android.support.v4.app.Fragment;
 import android.support.v4.app.FragmentManager;
 import android.support.v4.app.FragmentPagerAdapter;
 
-public class SectionsPagerAdapter extends FragmentPagerAdapter {
+public class AdaptadorPagina extends FragmentPagerAdapter {
 
-    public SectionsPagerAdapter(FragmentManager fm) {
+    public AdaptadorPagina(FragmentManager fm) {
 
         super(fm);
     }
 
     @Override
-    public Fragment getItem(int position) {
-        // getItem is called to instantiate the fragment for the given page.
-        // Return a PlaceholderFragment (defined as a static inner class below).
-        return PlaceholderFragment.newInstance(position + 1);
+    public Fragment getItem(int posicion) {
+        if (posicion == 1){
+            return Informacion.newInstance(posicion + 1);
+        }
+        else{
+            return Reproductor.newInstance(posicion + 1);
+        }
     }
 
     @Override
@@ -25,8 +28,8 @@ public class SectionsPagerAdapter extends FragmentPagerAdapter {
     }
 
     @Override
-    public CharSequence getPageTitle(int position) {
-        switch (position) {
+    public CharSequence getPageTitle(int posicion) {
+        switch (posicion) {
             case 0:
                 return "Reproductor";
             case 1:

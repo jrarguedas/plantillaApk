@@ -6,9 +6,9 @@ import android.content.Context;
 import android.content.DialogInterface;
 import android.support.v7.app.AppCompatActivity;
 
-public class PopUps extends AppCompatActivity {
+public class Alerta extends AppCompatActivity {
 
-    public void popUpSalir(Context context){
+    public void alertaSalir(Context context){
         AlertDialog.Builder salirApp = new AlertDialog.Builder(context);
         salirApp.setTitle("Salir");
         salirApp.setIcon(R.drawable.ic_exit_to_app_black_24dp);
