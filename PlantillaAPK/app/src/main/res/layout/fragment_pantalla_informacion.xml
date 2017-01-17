@@ -6,12 +6,12 @@
     android:layout_height="match_parent">
 
     <ScrollView
-        android:layout_width="350dp"
+        android:layout_width="@dimen/ScrollInformacionLargo"
         android:id="@+id/informacionVistaScroll"
         android:layout_alignParentTop="true"
         android:layout_centerHorizontal="true"
-        android:layout_marginTop="19dp"
-        android:layout_height="270dp">
+        android:layout_marginTop="@dimen/ScrollInformacionMargenArriba"
+        android:layout_height="@dimen/ScrollInformacionAncho">
 
         <LinearLayout
             android:layout_width="match_parent"
@@ -22,7 +22,8 @@
                 android:text="@string/descripcion"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:id="@+id/textoDescripcion" />
+                android:id="@+id/textoDescripcion"
+                android:textSize="@dimen/DescripcionInformacionTamañoLetra" />
 
         </LinearLayout>
     </ScrollView>
@@ -32,17 +33,18 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:id="@+id/textoVisitanos"
-        android:textSize="16sp"
+        android:textSize="@dimen/LinkInformacionTamañoLetra"
         android:layout_below="@+id/imagenLogo"
         android:layout_centerHorizontal="true" />
 
     <ImageView
         app:srcCompat="@drawable/logo"
         android:id="@+id/imagenLogo"
-        android:layout_width="150dp"
-        android:layout_height="150dp"
+        android:layout_width="@dimen/ImagenInformacionLargo"
+        android:layout_height="@dimen/ImagenInformacionAncho"
         android:layout_below="@+id/informacionVistaScroll"
-        android:layout_centerHorizontal="true" />
+        android:layout_centerHorizontal="true"
+        tools:ignore="ContentDescription" />
 
 
 </RelativeLayout>

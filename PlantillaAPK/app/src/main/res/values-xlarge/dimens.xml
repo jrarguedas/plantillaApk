@@ -1,0 +1,5 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <dimen name="NombreRadioPresentacionTamañoLetra">150sp</dimen>
+    <dimen name="NombreRadioPresentacionMargenArriba">55dp</dimen>
+</resources>

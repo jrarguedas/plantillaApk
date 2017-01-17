@@ -8,15 +8,16 @@
     tools:context="com.itcr.plantillaapk.PantallaPresentacion">
 
         <ImageView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
+            android:layout_height="@dimen/ImagenPresentacionLargo"
+            android:layout_width="@dimen/ImagenPresentacionAncho"
             app:srcCompat="@drawable/logo"
-            android:layout_marginTop="135dp"
+            android:layout_marginTop="@dimen/ImagenPresentacionMargenArriba"
             android:id="@+id/presentacionLogo"
             android:layout_alignParentTop="true"
             android:layout_alignParentLeft="true"
             android:layout_alignParentStart="true"
-            android:contentDescription="@string/DescripcionLogo" />
+            android:contentDescription="@string/DescripcionLogo"
+            />
 
         <TextView
             android:text="@string/Version"
@@ -38,14 +39,15 @@
 
         <TextView
             android:text="@string/NombreRadio"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="55dp"
+            android:layout_marginTop="@dimen/NombreRadioPresentacionMargenArriba"
             android:id="@+id/textoNombre"
             android:textAppearance="@style/TextAppearance.AppCompat.Light.SearchResult.Title"
-            android:textSize="30sp"
+            android:textSize="@dimen/NombreRadioPresentacionTamañoLetra"
             android:textStyle="normal|bold"
             android:layout_below="@+id/presentacionLogo"
-            android:layout_centerHorizontal="true" />
+            android:layout_centerHorizontal="true"
+            android:layout_height="wrap_content"
+            android:layout_width="wrap_content"
+            android:textAlignment="center" />
 
 </RelativeLayout>

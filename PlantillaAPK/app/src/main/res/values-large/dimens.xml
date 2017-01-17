@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <dimen name="activity_horizontal_margin">16dp</dimen>
+    <dimen name="activity_vertical_margin">16dp</dimen>
+    <dimen name="appbar_padding_top">8dp</dimen>
+
+
+    <dimen name="ImagenPresentacionAncho">400dp</dimen>
+    <dimen name="ImagenPresentacionLargo">150dp</dimen>
+    <dimen name="ImagenPresentacionMargenArriba">135dp</dimen>
+
+
+    <dimen name="NombreRadioPresentacionTamañoLetra">30sp</dimen>
+    <dimen name="NombreRadioPresentacionMargenArriba">55dp</dimen>
+
+
+    <dimen name="ImagenReproductorAncho">250dp</dimen>
+    <dimen name="ImagenReproductorlargo">200dp</dimen>
+    <dimen name="ImagenReproductorMargenArriba">37dp</dimen>
+
+    <dimen name="SeekBarAncho">20dp</dimen>
+    <dimen name="SeekBarLargo">300dp</dimen>
+    <dimen name="SeekBarMargenArriba">26dp</dimen>
+
+    <dimen name="BotonDetenerAncho">50dp</dimen>
+    <dimen name="BotonDetenerLargo">50dp</dimen>
+    <dimen name="BotonDetenerMargenArriba">46dp</dimen>
+    <dimen name="BotonDetenerMargenDerecho">16dp</dimen>
+    <dimen name="BotonDetenerMargenAbajo">16dp</dimen>
+    <dimen name="BotonPausaAncho">50dp</dimen>
+
+    <dimen name="BotonPausaLargo">50dp</dimen>
+    <dimen name="BotonPausaMargenArriba">46dp</dimen>
+    <dimen name="BotonPausaMargenDerecho">18dp</dimen>
+    <dimen name="BotonPausaMargenAbajo">18dp</dimen>
+
+    <dimen name="BotonReproducirAncho">80dp</dimen>
+    <dimen name="BotonReproducirLargo">80dp</dimen>
+    <dimen name="BotonReproducirMargenArriba">34dp</dimen>
+
+    <dimen name="LinkReproductorTamañoLetra">14sp</dimen>
+    <dimen name="LinkReproductorMargen">78dp</dimen>
+
+    <dimen name="ScrollInformacionAncho">270dp</dimen>
+    <dimen name="ScrollInformacionLargo">350dp</dimen>
+    <dimen name="ScrollInformacionMargenArriba">19dp</dimen>
+
+    <dimen name="DescripcionInformacionTamañoLetra">14sp</dimen>
+
+    <dimen name="ImagenInformacionAncho">150dp</dimen>
+    <dimen name="ImagenInformacionLargo">150dp</dimen>
+
+    <dimen name="LinkInformacionTamañoLetra">16sp</dimen>
+
+</resources>
