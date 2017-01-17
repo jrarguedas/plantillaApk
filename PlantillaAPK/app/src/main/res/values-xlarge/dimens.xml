@@ -1,5 +1,20 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-    <dimen name="NombreRadioPresentacionTamañoLetra">150sp</dimen>
-    <dimen name="NombreRadioPresentacionMargenArriba">55dp</dimen>
+    <dimen name="BotonDetenerAncho">100dp</dimen>
+    <dimen name="BotonDetenerLargo">100dp</dimen>
+    <dimen name="BotonDetenerMargenArriba">46dp</dimen>
+    <dimen name="BotonDetenerMargenDerecho">16dp</dimen>
+    <dimen name="BotonDetenerMargenAbajo">16dp</dimen>
+    <dimen name="BotonPausaAncho">100dp</dimen>
+
+    <dimen name="BotonPausaLargo">100dp</dimen>
+    <dimen name="BotonPausaMargenArriba">46dp</dimen>
+    <dimen name="BotonPausaMargenDerecho">18dp</dimen>
+    <dimen name="BotonPausaMargenAbajo">18dp</dimen>
+
+    <dimen name="BotonReproducirAncho">160dp</dimen>
+    <dimen name="BotonReproducirLargo">160dp</dimen>
+    <dimen name="BotonReproducirMargenArriba">34dp</dimen>
+
+    <dimen name="LinkReproductorTamañoLetra">30sp</dimen>
 </resources>

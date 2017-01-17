@@ -2,6 +2,7 @@ package com.itcr.plantillaapk;
 
 import android.os.Bundle;
 import android.support.v4.app.Fragment;
+import android.text.method.LinkMovementMethod;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -31,10 +32,14 @@ public class Informacion extends Fragment {
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
-        View vistaRaiz = inflater.inflate(R.layout.fragment_pantalla_informacion, container, false);
+        View vistaRaiz = inflater.inflate(R.layout.prueba_informacion, container, false);
+
+        TextView vistaTexto = (TextView) vistaRaiz.findViewById(R.id.textoInformacionLink);
+        vistaTexto.setMovementMethod(LinkMovementMethod.getInstance());
+
         ScrollView vistaScroll = (ScrollView) vistaRaiz.findViewById(R.id.informacionVistaScroll);
-        ImageView vistaImagen = (ImageView) vistaRaiz.findViewById(R.id.imagenLogo);
-        TextView vistaTexto = (TextView) vistaRaiz.findViewById(R.id.textoVisitanos);
+        ImageView vistaImagen = (ImageView) vistaRaiz.findViewById(R.id.imagenInformacionLogo);
+
         return vistaRaiz;
     }
 }

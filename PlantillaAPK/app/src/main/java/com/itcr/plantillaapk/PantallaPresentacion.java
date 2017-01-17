@@ -9,12 +9,12 @@ public class PantallaPresentacion extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_pantalla_presentacion);
+        setContentView(R.layout.prueba_presentacion);
         Thread myThread = new Thread(){
             @Override
             public void run() {
                 try {
-                    sleep(2500);
+                    sleep(5000);
                     Intent intento = new Intent(getApplicationContext(),MainActivity.class);
                     startActivity(intento);
                     finish();

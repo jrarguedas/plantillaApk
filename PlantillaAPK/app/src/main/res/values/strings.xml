@@ -5,7 +5,7 @@
     <string name="NombreRadio">Al Radio</string>
     <string name="Version">Version</string>
     <string name="NumVersion">1.0</string>
-    <string name="visitanos">Vísitanos en </string>
+    <string name="visitanos"><a href="https://www.google.com">Vísitanos en </a></string>
     <string name="descripcion">Aquí \niría\nla \ndescripción\nde la \nradio\ncomo \npueden \nver\ncompañeros \nsoy \ntodo \nun \ncrack\nlos \ncarreo\ncuando \nquieran\nizi\npici\ntu\nabuela\nen\nbici</string>
     <string name="DescripcionLogo">Representa el logo de cada emisora</string>
     <string name="textview">TextView</string>
