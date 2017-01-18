@@ -1,8 +1,5 @@
 package com.itcr.plantillaapk;
 
-/**
- * Created by jrarguedas on 14/01/17.
- */
 
 public class Radio {
     String nombre;
@@ -11,6 +8,12 @@ public class Radio {
     String urlPagina;
     String logo;
     String color;
+    String puntoMontaje;
+
+
+    public String getPuntoMontaje() {return puntoMontaje;}
+
+    public void setPuntoMontaje(String puntoMontaje) {this.puntoMontaje = puntoMontaje;}
 
     public String getUrlPagina() {
         return urlPagina;

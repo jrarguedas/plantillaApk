@@ -7,10 +7,6 @@ import android.net.Uri;
 
 import java.io.IOException;
 
-/**
- * Created by jrarguedas on 14/01/17.
- */
-
 public class Stream {
     MediaPlayer mediaPlayer;
     Uri radioUrl;

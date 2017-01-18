@@ -1,7 +1,6 @@
 package com.itcr.plantillaapk;
 
 import android.content.Context;
-import android.media.MediaPlayer;
 import android.os.Bundle;
 import android.support.v4.app.Fragment;
 import android.text.method.LinkMovementMethod;
@@ -10,15 +9,13 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ImageButton;
 import android.widget.TextView;
-import android.widget.Toast;
 
 import java.io.IOException;
-import java.net.URL;
 
 public class Reproductor extends Fragment {
 
     private static final String ARG_SECTION_NUMBER = "section_number";
-    final String url = "http://stream.codigosur.org/Radio-EduSounds.mp3";
+    final String url = "http://stream.codigosur.org:8000/RadioComunitariaUCB.mp3";
     Stream stream;
 
     public Reproductor() {}
