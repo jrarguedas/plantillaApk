@@ -16,7 +16,7 @@ public class Inicializador extends Activity{
 
     public String obtenerJson(Context context) throws IOException {
 
-        InputStream archivo = context.getResources().openRawResource(R.raw.datos_app);
+        InputStream archivo = context.getResources().openRawResource(R.raw.prueba_sin_datos);
         BufferedReader bufferArchivo = new BufferedReader(new InputStreamReader(archivo, "UTF-8"));
 
         String linea = bufferArchivo.readLine();
@@ -26,8 +26,9 @@ public class Inicializador extends Activity{
         return linea;
     }
 
-    public void obtenerDatos(String jsonStr, Radio radio) throws JSONException {
+    public Radio obtenerDatos(String jsonStr) throws JSONException {
         JSONObject jsonObj = new JSONObject(jsonStr);
+        Radio radio = new Radio();
 
         String nombreRadio = jsonObj.getString("name");
         String colorApp = jsonObj.getString("color");
@@ -36,12 +37,21 @@ public class Inicializador extends Activity{
         String puntoMontaje = jsonObj.getString("mountpoint");
         String descripcion = jsonObj.getString("description");
 
+        /*if (!nombreRadio.equals("")){radio.setNombre(nombreRadio);}
+        if (!colorApp.equals("")){radio.setColor(colorApp);}
+        if (!paginaRadio.equals("")){radio.setUrlPagina(paginaRadio);}
+        if (!streamUrl.equals("")){radio.setStreamURL(streamUrl);}
+        if (!puntoMontaje.equals("")){radio.setPuntoMontaje(puntoMontaje);}
+        if (!descripcion.equals("")){radio.setDescripcion(descripcion);}*/
+
         radio.setNombre(nombreRadio);
         radio.setColor(colorApp);
         radio.setUrlPagina(paginaRadio);
         radio.setStreamURL(streamUrl);
         radio.setPuntoMontaje(puntoMontaje);
         radio.setDescripcion(descripcion);
+
+        return radio;
     }
 
 }

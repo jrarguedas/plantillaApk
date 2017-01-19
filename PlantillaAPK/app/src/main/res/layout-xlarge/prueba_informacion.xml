@@ -13,7 +13,7 @@
             android:text="@string/descripcion"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:id="@+id/textView3"
+            android:id="@+id/textoDescripcion"
             android:textSize="35sp" />
     </ScrollView>
 
@@ -25,7 +25,7 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             app:srcCompat="@drawable/logoface"
-            android:id="@+id/imageView2"
+            android:id="@+id/imagenInformacionLogo"
             android:layout_alignParentRight="true"
             android:layout_alignParentEnd="true"
             android:layout_alignParentLeft="true"
@@ -42,7 +42,7 @@
             android:layout_alignParentTop="true"
             android:layout_centerHorizontal="true"
             android:layout_marginTop="28dp"
-            android:id="@+id/textView6"
+            android:id="@+id/textoInformacionLink"
             android:text="@string/visitanos"
             android:textSize="37sp" />
     </RelativeLayout>
