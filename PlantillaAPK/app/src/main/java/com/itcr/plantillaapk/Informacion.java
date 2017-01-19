@@ -29,7 +29,7 @@ public class Informacion extends Fragment {
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
-        View vistaRaiz = inflater.inflate(R.layout.prueba_informacion, container, false);
+        View vistaRaiz = inflater.inflate(R.layout.fragment_pantalla_informacion, container, false);
 
         TextView vistaTexto = (TextView) vistaRaiz.findViewById(R.id.textoInformacionLink);
         vistaTexto.setMovementMethod(LinkMovementMethod.getInstance());
