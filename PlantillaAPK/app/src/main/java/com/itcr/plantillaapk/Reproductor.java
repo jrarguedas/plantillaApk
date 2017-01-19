@@ -15,7 +15,7 @@ import java.io.IOException;
 public class Reproductor extends Fragment {
 
     private static final String ARG_SECTION_NUMBER = "section_number";
-    final String url = "http://stream.codigosur.org:8000/RadioComunitariaUCB.mp3";
+    final String url = "http://stream.codigosur.org/espikafm.mp3";
     Stream stream;
 
     public Reproductor() {}
