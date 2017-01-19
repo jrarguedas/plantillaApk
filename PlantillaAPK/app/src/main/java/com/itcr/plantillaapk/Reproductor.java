@@ -1,6 +1,8 @@
 package com.itcr.plantillaapk;
 
 import android.content.Context;
+import android.net.ConnectivityManager;
+import android.net.NetworkInfo;
 import android.os.Bundle;
 import android.support.v4.app.Fragment;
 import android.text.method.LinkMovementMethod;
@@ -9,6 +11,7 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ImageButton;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import java.io.IOException;
 
@@ -39,6 +42,8 @@ public class Reproductor extends Fragment {
         ImageButton imgStop = (ImageButton) vistaRaiz.findViewById(R.id.stop);
         ImageButton imgPausa = (ImageButton) vistaRaiz.findViewById(R.id.pause);
         final Context context = this.getContext();
+
+
 
 
         try {
