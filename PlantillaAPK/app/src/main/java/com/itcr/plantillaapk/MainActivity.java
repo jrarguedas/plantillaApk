@@ -22,6 +22,7 @@ import java.io.IOException;
 public class MainActivity extends AppCompatActivity {
 
     NotificationManager mNotificationManager = null;
+
     Notificacion notificacion = new Notificacion();
 
     private AdaptadorPagina adaptadorPagina;

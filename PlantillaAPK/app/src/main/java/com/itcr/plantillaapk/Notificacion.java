@@ -29,10 +29,11 @@ public class Notificacion {
 
         Intent notIntent =
                 new Intent(context, MainActivity.class);
+        notIntent.setFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP | Intent.FLAG_ACTIVITY_SINGLE_TOP | Intent.FLAG_ACTIVITY_NEW_TASK);
 
         PendingIntent contIntent =
                 PendingIntent.getActivity(
-                        context, 0, notIntent, 0);
+                        context, 0, notIntent, PendingIntent.FLAG_UPDATE_CURRENT);
 
         mBuilder.setContentIntent(contIntent);
 
