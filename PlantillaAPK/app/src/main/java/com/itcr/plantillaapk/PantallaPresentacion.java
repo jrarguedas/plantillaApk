@@ -14,7 +14,7 @@ public class PantallaPresentacion extends AppCompatActivity {
             @Override
             public void run() {
                 try {
-                    sleep(5000);
+                    sleep(2500);
                     Intent intento = new Intent(getApplicationContext(),MainActivity.class);
                     startActivity(intento);
                     finish();
