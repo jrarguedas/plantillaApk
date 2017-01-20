@@ -2,13 +2,15 @@ package com.itcr.plantillaapk;
 
 
 import android.app.AlertDialog;
+import android.app.NotificationManager;
 import android.content.Context;
 import android.content.DialogInterface;
 import android.support.v7.app.AppCompatActivity;
 
 public class Alerta extends AppCompatActivity {
+    Notificacion notificacion = new Notificacion();
 
-    public void alertaSalir(Context context){
+    public void alertaSalir(Context context, final NotificationManager mNotificationManager ){
         AlertDialog.Builder salirApp = new AlertDialog.Builder(context);
         salirApp.setTitle("Salir");
         salirApp.setIcon(R.drawable.ic_exit_to_app_black_24dp);
@@ -16,6 +18,10 @@ public class Alerta extends AppCompatActivity {
         salirApp.setPositiveButton("Salir", new DialogInterface.OnClickListener() {
             @Override
             public void onClick(DialogInterface dialog, int which) {
+                if (mNotificationManager != null){
+                    notificacion.finalizarNotificacion(mNotificationManager);
+                }
+
                 System.exit(0);
             }
         });
