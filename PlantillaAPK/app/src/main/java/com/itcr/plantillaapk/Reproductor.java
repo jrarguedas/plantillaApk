@@ -55,11 +55,10 @@ public class Reproductor extends Fragment {
         imgPlay.setOnClickListener(new View.OnClickListener() {
             public void onClick(View view) {
                 try {
-                    stream.play(url,context);
+                    stream.play();
                 } catch (IOException e) {
                     e.printStackTrace();
                 }
-
             }
         });
         imgPausa.setOnClickListener(new View.OnClickListener() {
