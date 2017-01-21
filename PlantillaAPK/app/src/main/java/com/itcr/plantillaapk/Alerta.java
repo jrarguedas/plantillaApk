@@ -5,12 +5,16 @@ import android.app.AlertDialog;
 import android.app.NotificationManager;
 import android.content.Context;
 import android.content.DialogInterface;
+import android.media.MediaPlayer;
 import android.support.v7.app.AppCompatActivity;
+
+import java.io.IOException;
 
 public class Alerta extends AppCompatActivity {
     Notificacion notificacion = new Notificacion();
+    MediaPlayer mediaPlayer = null;
 
-    public void alertaSalir(Context context, final NotificationManager mNotificationManager ){
+    public void alertaSalir(final Context context, final NotificationManager mNotificationManager ){
         AlertDialog.Builder salirApp = new AlertDialog.Builder(context);
         salirApp.setTitle("Salir");
         salirApp.setIcon(R.drawable.ic_exit_to_app_black_24dp);
@@ -20,6 +24,15 @@ public class Alerta extends AppCompatActivity {
             public void onClick(DialogInterface dialog, int which) {
                 if (mNotificationManager != null){
                     notificacion.finalizarNotificacion(mNotificationManager);
+                }
+
+                try {
+                    Stream stream = new Stream("", context);
+                    mediaPlayer = stream.getMediaPlayer();
+                    stream.destruir(mediaPlayer);
+
+                } catch (IOException e) {
+                    e.printStackTrace();
                 }
 
                 System.exit(0);

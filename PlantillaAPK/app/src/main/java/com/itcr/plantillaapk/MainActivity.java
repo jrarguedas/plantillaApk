@@ -1,6 +1,7 @@
 package com.itcr.plantillaapk;
 
 import android.app.NotificationManager;
+import android.media.MediaPlayer;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.Toolbar;
 
@@ -16,6 +17,8 @@ public class MainActivity extends AppCompatActivity {
 
     NotificationManager mNotificationManager = null;
 
+    MediaPlayer mediaPlayer = null;
+
     Notificacion notificacion = new Notificacion();
 
     private AdaptadorPagina adaptadorPagina;
@@ -24,6 +27,7 @@ public class MainActivity extends AppCompatActivity {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
+
         super.onCreate(savedInstanceState);
 
         setContentView(R.layout.activity_main);
@@ -56,7 +60,24 @@ public class MainActivity extends AppCompatActivity {
         if (mNotificationManager != null){
             notificacion.finalizarNotificacion(mNotificationManager);
         }
+
+        try {
+            Stream stream = new Stream("", this);
+            mediaPlayer = stream.getMediaPlayer();
+            stream.destruir(mediaPlayer);
+
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
         super.onDestroy();
+    }
+
+    @Override
+    protected void onRestart() {
+        if (mNotificationManager != null){
+            notificacion.finalizarNotificacion(mNotificationManager);
+        }
+        super.onRestart();
     }
 }
 

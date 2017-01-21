@@ -10,6 +10,7 @@ import android.widget.Toast;
 import java.io.IOException;
 
 public class Stream  extends Activity implements MediaPlayer.OnPreparedListener, MediaPlayer.OnBufferingUpdateListener {
+
     MediaPlayer mediaPlayer;
     Uri uri;
     Context contextMain;
@@ -45,7 +46,7 @@ public class Stream  extends Activity implements MediaPlayer.OnPreparedListener,
             pause=false;
         }
         else if(!estado()){
-            destruir();
+            destruir(mediaPlayer);
             inicializar();
             mediaPlayer.start();
         }
@@ -85,16 +86,20 @@ public class Stream  extends Activity implements MediaPlayer.OnPreparedListener,
         return false;
     }
 
-    public void destruir(){
+    public void destruir(MediaPlayer mediaPlayer){
         if(mediaPlayer != null){
             mediaPlayer.release();
-            mediaPlayer =null;
+            mediaPlayer = null;
         }
     }
 
     @Override
     public void onBufferingUpdate(MediaPlayer mp, int percent) {
         Toast.makeText(contextMain, "PlayerService onBufferingUpdate : " + percent + "%", Toast.LENGTH_LONG).show();
+    }
+
+    public MediaPlayer getMediaPlayer() {
+        return mediaPlayer;
     }
 
 }
