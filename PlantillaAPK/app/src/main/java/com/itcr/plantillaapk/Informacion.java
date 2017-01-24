@@ -10,7 +10,9 @@ import android.widget.ImageView;
 import android.widget.ScrollView;
 import android.widget.TextView;
 
+/*
 
+ */
 public class Informacion extends Fragment {
     private static final String ARG_SECTION_NUMBER = "section_number";
 

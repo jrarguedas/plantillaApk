@@ -1,15 +1,7 @@
 package com.itcr.plantillaapk;
 
-
 public class Radio {
-    String nombre;
-    String descripcion;
-    String streamURL;
-    String urlPagina;
-    String logo;
-    String color;
-    String puntoMontaje;
-
+    private String nombre, descripcion, streamURL, urlPagina, logo, color, puntoMontaje;
 
     public String getPuntoMontaje() {return puntoMontaje;}
 
@@ -43,6 +35,10 @@ public class Radio {
         return nombre;
     }
 
+    public void setNombre(String nombre) {
+        this.nombre = nombre;
+    }
+
     public String getDescripcion() {
         return descripcion;
     }
@@ -57,9 +53,5 @@ public class Radio {
 
     public void setStreamURL(String streamURL) {
         this.streamURL = streamURL;
-    }
-
-    public void setNombre(String nombre) {
-        this.nombre = nombre;
     }
 }

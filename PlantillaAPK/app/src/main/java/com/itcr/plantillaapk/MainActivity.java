@@ -1,28 +1,16 @@
 package com.itcr.plantillaapk;
 
 import android.app.NotificationManager;
-import android.media.MediaPlayer;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.Toolbar;
-
 import android.support.v4.view.ViewPager;
 import android.os.Bundle;
 
-
-import org.json.JSONException;
-
-import java.io.IOException;
-
 public class MainActivity extends AppCompatActivity {
 
-    NotificationManager mNotificationManager = null;
-
-    MediaPlayer mediaPlayer = null;
-
-    Notificacion notificacion = new Notificacion();
-
+    private NotificationManager mNotificationManager;
+    private Notificacion notificacion;
     private AdaptadorPagina adaptadorPagina;
-
     private ViewPager vistaPagina;
 
     @Override
@@ -30,10 +18,11 @@ public class MainActivity extends AppCompatActivity {
 
         super.onCreate(savedInstanceState);
 
+        mNotificationManager = null;
+        notificacion = new Notificacion();
+
         setContentView(R.layout.activity_main);
-
         Toolbar barraTareas = (Toolbar) findViewById(R.id.toolbar);
-
         setSupportActionBar(barraTareas);
         // Create the adapter that will return a fragment for each of the three
         // primary sections of the activity.
@@ -61,14 +50,6 @@ public class MainActivity extends AppCompatActivity {
             notificacion.finalizarNotificacion(mNotificationManager);
         }
 
-        try {
-            Stream stream = new Stream("", this);
-            mediaPlayer = stream.getMediaPlayer();
-            stream.destruir(mediaPlayer);
-
-        } catch (IOException e) {
-            e.printStackTrace();
-        }
         super.onDestroy();
     }
 

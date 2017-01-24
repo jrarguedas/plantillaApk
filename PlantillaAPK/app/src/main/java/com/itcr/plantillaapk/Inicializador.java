@@ -1,12 +1,9 @@
 package com.itcr.plantillaapk;
 
-
 import android.app.Activity;
 import android.content.Context;
-
 import org.json.JSONException;
 import org.json.JSONObject;
-
 import java.io.BufferedReader;
 import java.io.IOException;
 import java.io.InputStream;
