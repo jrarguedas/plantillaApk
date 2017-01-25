@@ -25,7 +25,6 @@ public class Alerta extends AppCompatActivity {
                 if (mNotificationManager != null){
                     notificacion.finalizarNotificacion(mNotificationManager);
                 }
-
                 System.exit(0);
             }
         });

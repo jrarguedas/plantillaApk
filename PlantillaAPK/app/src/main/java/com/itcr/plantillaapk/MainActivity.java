@@ -1,8 +1,9 @@
 package com.itcr.plantillaapk;
 
 import android.app.NotificationManager;
+
 import android.content.Intent;
-import android.media.MediaPlayer;
+import android.support.v4.view.MenuItemCompat;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.ShareActionProvider;
 import android.support.v7.widget.Toolbar;
@@ -16,8 +17,8 @@ import org.json.JSONException;
 import java.io.IOException;
 
 public class MainActivity extends AppCompatActivity {
-    private NotificationManager mNotificationManager;
-    private Notificacion notificacion;
+    private NotificationManager mNotificationManager = null;
+    private Notificacion notificacion = new Notificacion();
     private AdaptadorPagina adaptadorPagina;
     private ViewPager vistaPagina;
     Radio radio;
@@ -30,8 +31,8 @@ public class MainActivity extends AppCompatActivity {
 
         super.onCreate(savedInstanceState);
 
-        mNotificationManager = null;
-        notificacion = new Notificacion();
+        //mNotificationManager = null;
+        //notificacion = new Notificacion();
 
         setContentView(R.layout.activity_main);
         Toolbar barraTareas = (Toolbar) findViewById(R.id.toolbar);
@@ -77,7 +78,6 @@ public class MainActivity extends AppCompatActivity {
         if (mNotificationManager != null){
             notificacion.finalizarNotificacion(mNotificationManager);
         }
-
         super.onDestroy();
     }
 
@@ -87,6 +87,26 @@ public class MainActivity extends AppCompatActivity {
             notificacion.finalizarNotificacion(mNotificationManager);
         }
         super.onRestart();
+    }
+
+    @Override
+    public boolean onCreateOptionsMenu(Menu menu) {
+        getMenuInflater().inflate(R.menu.menu_main, menu);
+        MenuItem item = menu.findItem(R.id.compartir);
+        shareAction = (ShareActionProvider) MenuItemCompat.getActionProvider(item);
+        share();
+        return true;
+    }
+
+    public void share(){
+        if (shareAction != null) {
+            Intent shareIntent = new Intent();
+            shareIntent.setAction(Intent.ACTION_SEND);
+            shareIntent.putExtra(Intent.EXTRA_TEXT, "Escucha: " + radio.getNombre() + "," + radio.getStreamURL());
+            shareIntent.setType("text/plain");
+            //startActivity(shareIntent);
+            shareAction.setShareIntent(shareIntent);
+        }
     }
 }
 

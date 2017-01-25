@@ -20,7 +20,6 @@ public class Notificacion {
                                 .getDrawable(R.drawable.ic_audiotrack)).getBitmap()))
                         .setContentTitle("Aplicación en curso")
                         .setContentText("La aplicación continua en ejecución")
-
                         .setTicker("Notificación!")
                         .setPriority(Notification.PRIORITY_LOW)
                         .setOngoing(true)
