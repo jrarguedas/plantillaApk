@@ -5,30 +5,6 @@
     android:layout_height="match_parent"
     android:background="@drawable/fondoreproductor">
 
-    <LinearLayout
-        android:layout_width="20dp"
-        android:layout_height="match_parent">
-
-    </LinearLayout>
-
-    <LinearLayout
-        android:layout_width="20dp"
-        android:layout_height="match_parent"
-        android:layout_alignParentTop="true"
-        android:layout_alignParentRight="true"
-        android:layout_alignParentEnd="true">
-
-    </LinearLayout>
-
-    <LinearLayout
-        android:layout_width="match_parent"
-        android:layout_height="20dp"
-        android:layout_alignParentTop="true"
-        android:layout_alignParentRight="true"
-        android:layout_alignParentEnd="true">
-
-    </LinearLayout>
-
     <RelativeLayout
         android:layout_marginTop="18dp"
         android:layout_marginLeft="23dp"
@@ -43,7 +19,8 @@
         android:layout_height="200dp"
         android:layout_marginTop="520dp"
         android:layout_marginLeft="23dp"
-        android:layout_width="750dp">
+        android:layout_width="750dp"
+        tools:ignore="RtlHardcoded">
 
         <SeekBar
             android:id="@+id/seekBar1"
@@ -150,7 +127,6 @@
             android:textColorLink="#ffffff"
             android:id="@+id/textoSolicitud"
             android:textSize="@dimen/LinkReproductorTamañoLetra"
-            android:layout_weight="1"
             android:layout_alignParentTop="true"
             android:layout_centerHorizontal="true"
             android:layout_marginTop="63dp" />

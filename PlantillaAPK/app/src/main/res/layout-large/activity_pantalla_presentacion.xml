@@ -17,7 +17,8 @@
             app:srcCompat="@drawable/logo"
             android:id="@+id/imagenPresentacionLogo"
             android:layout_alignParentLeft="true"
-            android:layout_alignParentStart="true" />
+            android:layout_alignParentStart="true"
+            android:contentDescription="@string/DescripcionLogo" />
     </RelativeLayout>
 
     <RelativeLayout
@@ -33,7 +34,8 @@
             android:id="@+id/textoNombreRadio"
             android:textStyle="normal|bold"
             android:textAlignment="center"
-            android:textSize="65sp"
+            android:gravity="center"
+            android:textSize="60sp"
             android:textColor="@android:color/black" />
     </RelativeLayout>
 
@@ -42,7 +44,7 @@
         android:layout_height="120dp">
 
         <TextView
-            android:text="1.0"
+            android:text="@string/NumVersion"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:id="@+id/textoNumeroVersion"
@@ -51,7 +53,7 @@
             android:layout_marginBottom="14dp" />
 
         <TextView
-            android:text="version"
+            android:text="@string/Version"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:id="@+id/textoVersion"

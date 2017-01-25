@@ -8,11 +8,11 @@
 
     <ScrollView
         android:layout_width="match_parent"
-        android:layout_height="558dp"
-        android:id="@+id/informacionVistaScroll">
+        android:id="@+id/informacionVistaScroll"
+        android:layout_height="550dp">
 
         <TextView
-            android:text="@string/descripcion"
+            android:textColor="#ffffff"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:id="@+id/textoDescripcion"
@@ -20,12 +20,12 @@
     </ScrollView>
 
     <RelativeLayout
-        android:layout_width="wrap_content"
-        android:layout_height="362dp">
+        android:layout_width="match_parent"
+        android:layout_height="350dp">
 
         <ImageView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
             app:srcCompat="@drawable/logo"
             android:id="@+id/imagenInformacionLogo"
             android:layout_alignParentRight="true"
@@ -40,13 +40,12 @@
         android:layout_height="match_parent">
 
         <TextView
+            android:textColorLink="#ffffff"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_alignParentTop="true"
-            android:layout_centerHorizontal="true"
-            android:layout_marginTop="28dp"
             android:id="@+id/textoInformacionLink"
-            android:text="@string/visitanos"
-            android:textSize="37sp" />
+            android:textSize="37sp"
+            android:layout_alignParentTop="true"
+            android:layout_centerHorizontal="true" />
     </RelativeLayout>
 </LinearLayout>

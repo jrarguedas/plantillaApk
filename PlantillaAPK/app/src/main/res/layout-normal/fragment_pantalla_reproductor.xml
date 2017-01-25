@@ -6,60 +6,6 @@
     android:layout_height="match_parent"
     android:background="@drawable/fondoreproductor">
 
-    <LinearLayout
-        android:layout_width="20dp"
-        android:layout_height="match_parent">
-
-    </LinearLayout>
-
-    <LinearLayout
-        android:layout_width="20dp"
-        android:layout_height="match_parent"
-        android:layout_alignParentTop="true"
-        android:layout_alignParentRight="true"
-        android:layout_alignParentEnd="true">
-
-    </LinearLayout>
-
-    <LinearLayout
-        android:layout_width="match_parent"
-        android:layout_height="20dp"
-        android:layout_alignParentTop="true"
-        android:layout_alignParentRight="true"
-        android:layout_alignParentEnd="true">
-
-    </LinearLayout>
-
-    <RelativeLayout
-        android:layout_marginTop="18dp"
-        android:layout_marginLeft="23dp"
-        android:layout_marginStart="23dp"
-        android:background="@drawable/disco2"
-        android:layout_height="200dp"
-        android:layout_width="315dp">
-
-    </RelativeLayout>
-
-    <RelativeLayout
-        android:layout_width="300dp"
-        android:layout_alignParentBottom="true"
-        android:layout_alignParentRight="true"
-        android:layout_alignParentEnd="true"
-        android:layout_alignParentLeft="true"
-        android:layout_alignParentStart="true"
-        android:layout_height="150dp">
-
-
-    </RelativeLayout>
-
-
-    <RelativeLayout
-        android:layout_height="100dp"
-        android:layout_marginTop="430dp"
-        android:layout_width="575dp">
-
-
-    </RelativeLayout>
 
     <LinearLayout
         android:id="@+id/linea"
@@ -138,10 +84,19 @@
             android:textColorLink="#ffffff"
             android:id="@+id/textoSolicitud"
             android:textSize="@dimen/LinkReproductorTamañoLetra"
-            android:layout_weight="1"
             android:layout_alignParentBottom="true"
             android:layout_centerHorizontal="true"
             android:layout_marginBottom="18dp" />
+
+    </RelativeLayout>
+
+    <RelativeLayout
+        android:background="@drawable/disco2"
+        android:layout_marginTop="11dp"
+        android:layout_width="350dp"
+        android:layout_height="225dp"
+        android:layout_alignParentTop="true"
+        android:layout_centerHorizontal="true">
 
     </RelativeLayout>
 
