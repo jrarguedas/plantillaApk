@@ -1,1 +1,1 @@
-{"name": "radio denis", "color": "ffddff", "webpage": "denis.cr", "stream_url": "https://stream.codigosur.org/denis.mp3", "mountpoint": "denis", "description": "grgregnekfvnejrgqrtklnfidvlfv kdojbrjfbj [igorjbw"}
+{"name": "Moraga", "color": "000000", "webpage": "kmoragas.com", "stream_url": "https://stream.codigosur.org/RadioUniversidad.mp3", "mountpoint": "RadioUniversidad", "description": "esta es la radio de moraga"}

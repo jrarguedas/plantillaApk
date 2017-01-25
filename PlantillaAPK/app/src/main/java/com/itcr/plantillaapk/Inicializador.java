@@ -13,10 +13,17 @@ import java.io.InputStream;
 import java.io.InputStreamReader;
 
 public class Inicializador extends Activity{
+    Radio radio;
+
+
+    public Inicializador(Radio r){
+        radio=r;
+
+    }
 
     public String obtenerJson(Context context) throws IOException {
 
-        InputStream archivo = context.getResources().openRawResource(R.raw.prueba_sin_datos);
+        InputStream archivo = context.getResources().openRawResource(R.raw.datos_app);
         BufferedReader bufferArchivo = new BufferedReader(new InputStreamReader(archivo, "UTF-8"));
 
         String linea = bufferArchivo.readLine();
@@ -28,7 +35,7 @@ public class Inicializador extends Activity{
 
     public Radio obtenerDatos(String jsonStr) throws JSONException {
         JSONObject jsonObj = new JSONObject(jsonStr);
-        Radio radio = new Radio();
+
 
         String nombreRadio = jsonObj.getString("name");
         String colorApp = jsonObj.getString("color");

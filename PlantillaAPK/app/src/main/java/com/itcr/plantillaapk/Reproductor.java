@@ -1,6 +1,7 @@
 package com.itcr.plantillaapk;
 
 import android.content.Context;
+import android.content.Intent;
 import android.net.ConnectivityManager;
 import android.net.NetworkInfo;
 import android.os.Bundle;
@@ -18,13 +19,14 @@ import java.io.IOException;
 public class Reproductor extends Fragment {
 
     private static final String ARG_SECTION_NUMBER = "section_number";
-    final String url = "http://stream.codigosur.org/espikafm.mp3";
+    private static Radio radio;
     Stream stream;
 
     public Reproductor() {}
 
-    public static Reproductor newInstance(int sectionNumber) {
+    public static Reproductor newInstance(int sectionNumber, Radio r) {
         Reproductor reproductor = new Reproductor();
+        radio =r;
         Bundle args = new Bundle();
         args.putInt(ARG_SECTION_NUMBER, sectionNumber);
         reproductor.setArguments(args);
@@ -47,7 +49,7 @@ public class Reproductor extends Fragment {
 
 
         try {
-            stream = new Stream(url,context);
+            stream = new Stream(radio.getStreamURL(),context);
         } catch (IOException e) {
             e.printStackTrace();
         }
@@ -72,7 +74,10 @@ public class Reproductor extends Fragment {
             }
         });
 
+
         return vistaRaiz;
     }
+
+
 
 }
