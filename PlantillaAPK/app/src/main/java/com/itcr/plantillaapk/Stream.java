@@ -6,21 +6,21 @@ import android.media.AudioManager;
 import android.media.MediaPlayer;
 import android.net.Uri;
 import android.widget.Toast;
-
 import java.io.IOException;
 
 public class Stream  extends Activity implements MediaPlayer.OnPreparedListener, MediaPlayer.OnBufferingUpdateListener {
 
-    MediaPlayer mediaPlayer;
-    Uri uri;
-    Context contextMain;
-    String urlRadio;
-    boolean pause = false;
+    private MediaPlayer mediaPlayer;
+    private Uri uri;
+    private Context contextMain;
+    private String urlRadio;
+    private boolean pause;
 
     public Stream(String url, Context context) throws IOException {
         contextMain=context;
         urlRadio=url;
         inicializar();
+        pause = false;
     }
 
     public void inicializar() throws IOException {
@@ -96,10 +96,6 @@ public class Stream  extends Activity implements MediaPlayer.OnPreparedListener,
     @Override
     public void onBufferingUpdate(MediaPlayer mp, int percent) {
         Toast.makeText(contextMain, "PlayerService onBufferingUpdate : " + percent + "%", Toast.LENGTH_LONG).show();
-    }
-
-    public MediaPlayer getMediaPlayer() {
-        return mediaPlayer;
     }
 
 }

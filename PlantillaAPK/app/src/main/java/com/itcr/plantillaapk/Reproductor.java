@@ -1,9 +1,6 @@
 package com.itcr.plantillaapk;
 
 import android.content.Context;
-import android.content.Intent;
-import android.net.ConnectivityManager;
-import android.net.NetworkInfo;
 import android.os.Bundle;
 import android.support.v4.app.Fragment;
 import android.text.method.LinkMovementMethod;
@@ -12,7 +9,6 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ImageButton;
 import android.widget.TextView;
-import android.widget.Toast;
 
 import java.io.IOException;
 
@@ -20,7 +16,8 @@ public class Reproductor extends Fragment {
 
     private static final String ARG_SECTION_NUMBER = "section_number";
     private static Radio radio;
-    Stream stream;
+    private Stream stream;
+    private InterrupcionAudifonos interrupcionAudifonos;
 
     public Reproductor() {}
 
@@ -45,11 +42,10 @@ public class Reproductor extends Fragment {
         ImageButton imgPausa = (ImageButton) vistaRaiz.findViewById(R.id.pause);
         final Context context = this.getContext();
 
-
-
-
         try {
             stream = new Stream(radio.getStreamURL(),context);
+            interrupcionAudifonos = new InterrupcionAudifonos(stream);
+
         } catch (IOException e) {
             e.printStackTrace();
         }

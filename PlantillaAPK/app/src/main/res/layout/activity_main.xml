@@ -8,28 +8,6 @@
     android:fitsSystemWindows="true"
     tools:context="com.itcr.plantillaapk.MainActivity">
 
-    <android.support.v4.view.ViewPager
-        android:id="@+id/container"
-        android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        app:layout_behavior="@string/appbar_scrolling_view_behavior">
-
-        <android.support.v4.view.PagerTitleStrip
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            style="@style/viewPagerTitleStrip"
-            android:layout_gravity="top"
-            android:background="#3F51B5"
-            android:textColor="#fff"
-            android:paddingTop="4dp"
-            android:paddingBottom="4dp"/>
-
-    </android.support.v4.view.ViewPager>
-
-    <item
-        android:drawable="@drawable/ic_reproductor_share"
-        android:state_activated="false"/>
-
     <android.support.design.widget.AppBarLayout
         android:id="@+id/appbar"
         android:layout_width="match_parent"
@@ -49,6 +27,24 @@
         </android.support.v7.widget.Toolbar>
 
     </android.support.design.widget.AppBarLayout>
+
+    <android.support.v4.view.ViewPager
+        android:id="@+id/container"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        app:layout_behavior="@string/appbar_scrolling_view_behavior">
+
+        <android.support.v4.view.PagerTitleStrip
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            style="@style/viewPagerTitleStrip"
+            android:layout_gravity="top"
+            android:background="#3F51B5"
+            android:textColor="#fff"
+            android:paddingTop="4dp"
+            android:paddingBottom="4dp"/>
+
+    </android.support.v4.view.ViewPager>
 
 
 </android.support.design.widget.CoordinatorLayout>

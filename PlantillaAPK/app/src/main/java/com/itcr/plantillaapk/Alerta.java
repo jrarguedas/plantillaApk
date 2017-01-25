@@ -1,18 +1,18 @@
 package com.itcr.plantillaapk;
 
-
 import android.app.AlertDialog;
 import android.app.NotificationManager;
 import android.content.Context;
 import android.content.DialogInterface;
-import android.media.MediaPlayer;
 import android.support.v7.app.AppCompatActivity;
 
-import java.io.IOException;
-
 public class Alerta extends AppCompatActivity {
-    Notificacion notificacion = new Notificacion();
-    MediaPlayer mediaPlayer = null;
+
+    private Notificacion notificacion;
+
+    public Alerta(){
+        notificacion = new Notificacion();
+    }
 
     public void alertaSalir(final Context context, final NotificationManager mNotificationManager ){
         AlertDialog.Builder salirApp = new AlertDialog.Builder(context);
@@ -24,15 +24,6 @@ public class Alerta extends AppCompatActivity {
             public void onClick(DialogInterface dialog, int which) {
                 if (mNotificationManager != null){
                     notificacion.finalizarNotificacion(mNotificationManager);
-                }
-
-                try {
-                    Stream stream = new Stream("", context);
-                    mediaPlayer = stream.getMediaPlayer();
-                    stream.destruir(mediaPlayer);
-
-                } catch (IOException e) {
-                    e.printStackTrace();
                 }
 
                 System.exit(0);

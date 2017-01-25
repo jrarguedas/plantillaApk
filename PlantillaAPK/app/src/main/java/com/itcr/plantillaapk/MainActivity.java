@@ -6,33 +6,33 @@ import android.media.MediaPlayer;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.ShareActionProvider;
 import android.support.v7.widget.Toolbar;
-
 import android.support.v4.view.ViewPager;
 import android.os.Bundle;
 import android.view.Menu;
 import android.view.MenuItem;
-
 
 import org.json.JSONException;
 
 import java.io.IOException;
 
 public class MainActivity extends AppCompatActivity {
-
+    private NotificationManager mNotificationManager;
+    private Notificacion notificacion;
     private AdaptadorPagina adaptadorPagina;
     private ViewPager vistaPagina;
+    Radio radio;
     private ShareActionProvider shareAction;
 
-    NotificationManager mNotificationManager = null;
-    MediaPlayer mediaPlayer = null;
-    Notificacion notificacion = new Notificacion();
-    Radio radio;
 
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
 
         super.onCreate(savedInstanceState);
+
+        mNotificationManager = null;
+        notificacion = new Notificacion();
+
         setContentView(R.layout.activity_main);
         Toolbar barraTareas = (Toolbar) findViewById(R.id.toolbar);
         setSupportActionBar(barraTareas);
@@ -66,37 +66,6 @@ public class MainActivity extends AppCompatActivity {
         new Alerta().alertaSalir(this, mNotificationManager);
     }
 
-    @Override
-    public boolean onCreateOptionsMenu(Menu menu) {
-        getMenuInflater().inflate(R.menu.compartir, menu);
-        MenuItem shareItem = menu.findItem(R.id.share);
-
-        if (shareItem != null) {
-           // shareAction = (ShareActionProvider) shareItem.getActionProvider();
-        }
-
-        // Create an Intent to share your content
-        share();
-
-        return true;
-    }
-
-
-
-        public void share(){
-            if (shareAction != null) {
-
-                Intent shareIntent = new Intent();
-                shareIntent.setAction(Intent.ACTION_SEND);
-                shareIntent.putExtra(Intent.EXTRA_TEXT, "Escucha: " + radio.getNombre() + "," + radio.getStreamURL());
-                shareIntent.setType("text/plain");
-                startActivity(shareIntent);
-                shareAction.setShareIntent(shareIntent);
-            }
-
-        }
-
-
 
     public void onPause(){
         mNotificationManager = notificacion.notificacion(this);
@@ -109,14 +78,6 @@ public class MainActivity extends AppCompatActivity {
             notificacion.finalizarNotificacion(mNotificationManager);
         }
 
-        try {
-            Stream stream = new Stream("", this);
-            mediaPlayer = stream.getMediaPlayer();
-            stream.destruir(mediaPlayer);
-
-        } catch (IOException e) {
-            e.printStackTrace();
-        }
         super.onDestroy();
     }
 
