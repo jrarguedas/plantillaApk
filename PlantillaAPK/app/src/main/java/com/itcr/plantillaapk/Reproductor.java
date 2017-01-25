@@ -44,7 +44,7 @@ public class Reproductor extends Fragment {
 
         try {
             stream = Stream.construirStream(radio.getStreamURL(),context);
-            interrupcionAudifonos = new InterrupcionAudifonos(context);
+            interrupcionAudifonos = new InterrupcionAudifonos();
 
         } catch (IOException e) {
             e.printStackTrace();

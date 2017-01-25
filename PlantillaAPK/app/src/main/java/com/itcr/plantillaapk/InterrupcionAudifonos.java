@@ -9,8 +9,8 @@ public class InterrupcionAudifonos extends android.content.BroadcastReceiver {
 
     private Stream stream;
 
-    public InterrupcionAudifonos(Context contexto) throws IOException {
-        stream = Stream.construirStream("", contexto);
+    public InterrupcionAudifonos() throws IOException {
+        stream = Stream.construirStream("", null);
     }
 
     @Override
