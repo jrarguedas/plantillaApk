@@ -40,7 +40,7 @@ public class Inicializador extends Activity{
         String descripcion = jsonObj.getString("description");
         String logoUrl = jsonObj.getString("logo_url");
 
-        if (!paginaRadio.startsWith("http://") && !paginaRadio.startsWith("https://")){
+        if (!paginaRadio.startsWith("http://") && !paginaRadio.startsWith("https://") && !paginaRadio.equals("")){
             paginaRadio = "http://" + paginaRadio;
         }
         else if (!colorApp.equals("")) {

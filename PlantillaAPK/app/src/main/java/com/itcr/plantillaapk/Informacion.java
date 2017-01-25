@@ -36,22 +36,18 @@ public class Informacion extends Fragment {
         TextView vistaTexto = (TextView) vistaRaiz.findViewById(R.id.textoInformacionLink);
         vistaTexto.setMovementMethod(LinkMovementMethod.getInstance());
 
-        //ScrollView vistaScroll = (ScrollView) vistaRaiz.findViewById(R.id.informacionVistaScroll);
-        //ImageView vistaImagen = (ImageView) vistaRaiz.findViewById(R.id.imagenInformacionLogo);
-
         TextView descripcion = (TextView) vistaRaiz.findViewById(R.id.textoDescripcion);
         TextView urlRadio = (TextView) vistaRaiz.findViewById(R.id.textoInformacionLink);
 
         descripcion.setText(radio.getDescripcion());
 
-        if(radio.getUrlPagina().equals("")){
-            urlRadio.setLinksClickable(false);
-            urlRadio.setText("Visitanos en");
-        }
-        else{
+        if(!radio.getUrlPagina().equals("")){
             urlRadio.setText(Html.fromHtml("<a href=\""+ radio.getUrlPagina() + "\"> Visitanos en </a>"));
             urlRadio.setClickable(true);
             urlRadio.setMovementMethod (LinkMovementMethod.getInstance());
+        }
+        else{
+            urlRadio.setVisibility(View.INVISIBLE);
         }
 
         return vistaRaiz;
