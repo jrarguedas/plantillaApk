@@ -3,12 +3,14 @@ package com.itcr.plantillaapk;
 import android.content.Context;
 import android.content.Intent;
 
+import java.io.IOException;
+
 public class InterrupcionAudifonos extends android.content.BroadcastReceiver {
 
     private Stream stream;
 
-    public InterrupcionAudifonos(Stream newStream){
-        stream = newStream;
+    public InterrupcionAudifonos(Context contexto) throws IOException {
+        stream = Stream.construirStream("", contexto);
     }
 
     @Override
@@ -18,4 +20,6 @@ public class InterrupcionAudifonos extends android.content.BroadcastReceiver {
             stream.stop();
         }
     }
+
+
 }

@@ -11,12 +11,27 @@ import android.support.v4.app.NotificationCompat;
 public class Notificacion {
 
     private static final int NOTIF_ALERTA_ID = 1;
+    private Context contextoMain;
+    private static Notificacion notificacion;
+    private NotificationManager administradorNotificaciones;
 
-    public NotificationManager notificacion(Context context){
+    private Notificacion(Context nuevoContexo){
+        this.contextoMain = nuevoContexo;
+    }
+
+    public static Notificacion construirNotificacion(Context nuevoContexo) {
+        if (notificacion == null){
+            notificacion = new Notificacion(nuevoContexo);
+        }
+
+        return notificacion;
+    }
+
+    public void nuevaNotificacion(){
         NotificationCompat.Builder mBuilder =
-                new NotificationCompat.Builder(context)
+                new NotificationCompat.Builder(contextoMain)
                         .setSmallIcon(android.R.drawable.presence_audio_online)
-                        .setLargeIcon((((BitmapDrawable)context.getResources()
+                        .setLargeIcon((((BitmapDrawable) contextoMain.getResources()
                                 .getDrawable(R.drawable.ic_audiotrack)).getBitmap()))
                         .setContentTitle("Aplicación en curso")
                         .setContentText("La aplicación continua en ejecución")
@@ -26,24 +41,24 @@ public class Notificacion {
                         .setAutoCancel(true);
 
         Intent notIntent =
-                new Intent(context, MainActivity.class);
+                new Intent(contextoMain, MainActivity.class);
         notIntent.setFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP | Intent.FLAG_ACTIVITY_SINGLE_TOP | Intent.FLAG_ACTIVITY_NEW_TASK);
 
         PendingIntent contIntent =
                 PendingIntent.getActivity(
-                        context, 0, notIntent, PendingIntent.FLAG_UPDATE_CURRENT);
+                        contextoMain, 0, notIntent, PendingIntent.FLAG_UPDATE_CURRENT);
 
         mBuilder.setContentIntent(contIntent);
 
-        NotificationManager mNotificationManager =
-                (NotificationManager) context.getSystemService(Context.NOTIFICATION_SERVICE);
+        administradorNotificaciones =
+                (NotificationManager) contextoMain.getSystemService(Context.NOTIFICATION_SERVICE);
 
-        mNotificationManager.notify(NOTIF_ALERTA_ID, mBuilder.build());
-
-        return mNotificationManager;
+        administradorNotificaciones.notify(NOTIF_ALERTA_ID, mBuilder.build());
     }
 
-    public void finalizarNotificacion(NotificationManager mNotificationManager){
-        mNotificationManager.cancel(NOTIF_ALERTA_ID);
+    public void finalizarNotificacion(){
+        if (administradorNotificaciones != null){
+            administradorNotificaciones.cancel(NOTIF_ALERTA_ID);
+        }
     }
 }

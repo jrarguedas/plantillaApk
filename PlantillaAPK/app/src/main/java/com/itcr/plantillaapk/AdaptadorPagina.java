@@ -9,12 +9,10 @@ Esta clase se encarga de devolver las pantallas que se muestran en la interfaz d
  */
 
 public class AdaptadorPagina extends FragmentPagerAdapter {
-    Radio radio;
 
 
-    public AdaptadorPagina(FragmentManager fm,Radio r) {
+    public AdaptadorPagina(FragmentManager fm) {
         super(fm);
-        radio =r;
     }
 
     /*
@@ -30,10 +28,10 @@ public class AdaptadorPagina extends FragmentPagerAdapter {
     @Override
     public Fragment getItem(int posicion) {
         if (posicion == 1){
-            return Informacion.newInstance(posicion + 1,radio);
+            return Informacion.newInstance(posicion + 1);
         }
         else{
-            return Reproductor.newInstance(posicion + 1,radio);
+            return Reproductor.newInstance(posicion + 1);
         }
     }
 
