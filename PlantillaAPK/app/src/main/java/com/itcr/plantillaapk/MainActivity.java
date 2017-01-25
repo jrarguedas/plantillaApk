@@ -18,7 +18,7 @@ public class MainActivity extends AppCompatActivity {
     private Notificacion notificacion;
     private AdaptadorPagina adaptadorPagina;
     private ViewPager vistaPagina;
-    Radio radio;
+    private Radio radio;
     private ShareActionProvider shareAction;
 
 

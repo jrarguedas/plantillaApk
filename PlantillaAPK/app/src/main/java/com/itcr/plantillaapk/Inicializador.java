@@ -38,17 +38,14 @@ public class Inicializador extends Activity{
         String streamUrl = jsonObj.getString("stream_url");
         String puntoMontaje = jsonObj.getString("mountpoint");
         String descripcion = jsonObj.getString("description");
+        String logoUrl = jsonObj.getString("logo_url");
 
         if (!paginaRadio.startsWith("http://") && !paginaRadio.startsWith("https://")){
             paginaRadio = "http://" + paginaRadio;
         }
-
-        /*if (!nombreRadio.equals("")){radio.setNombre(nombreRadio);}
-        if (!colorApp.equals("")){radio.setColor(colorApp);}
-        if (!paginaRadio.equals("")){radio.setUrlPagina(paginaRadio);}
-        if (!streamUrl.equals("")){radio.setStreamURL(streamUrl);}
-        if (!puntoMontaje.equals("")){radio.setPuntoMontaje(puntoMontaje);}
-        if (!descripcion.equals("")){radio.setDescripcion(descripcion);}*/
+        else if (!colorApp.equals("")) {
+            radio.setColor(colorApp);
+        }
 
         radio.setNombre(nombreRadio);
         radio.setColor(colorApp);
@@ -56,6 +53,7 @@ public class Inicializador extends Activity{
         radio.setStreamURL(streamUrl);
         radio.setPuntoMontaje(puntoMontaje);
         radio.setDescripcion(descripcion);
+        radio.setLogo(logoUrl);
     }
 
 }

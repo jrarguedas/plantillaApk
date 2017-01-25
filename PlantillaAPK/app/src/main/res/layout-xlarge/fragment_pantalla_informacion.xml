@@ -9,7 +9,7 @@
     <ScrollView
         android:layout_width="match_parent"
         android:id="@+id/informacionVistaScroll"
-        android:layout_height="558dp">
+        android:layout_height="550dp">
 
         <TextView
             android:textColor="#ffffff"
@@ -43,10 +43,9 @@
             android:textColorLink="#ffffff"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_alignParentTop="true"
-            android:layout_centerHorizontal="true"
-            android:layout_marginTop="28dp"
             android:id="@+id/textoInformacionLink"
-            android:textSize="37sp" />
+            android:textSize="37sp"
+            android:layout_alignParentTop="true"
+            android:layout_centerHorizontal="true" />
     </RelativeLayout>
 </LinearLayout>
