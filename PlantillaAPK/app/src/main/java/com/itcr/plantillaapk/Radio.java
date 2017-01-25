@@ -2,6 +2,16 @@ package com.itcr.plantillaapk;
 
 public class Radio {
     private String nombre, descripcion, streamURL, urlPagina, logo, color, puntoMontaje;
+    private static Radio radio;
+
+    private Radio() {}
+
+    public static Radio construirRadio() {
+        if (radio == null){
+            radio = new Radio();
+        }
+        return radio;
+    }
 
     public String getPuntoMontaje() {return puntoMontaje;}
 

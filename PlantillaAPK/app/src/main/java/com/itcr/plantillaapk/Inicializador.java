@@ -13,8 +13,8 @@ public class Inicializador extends Activity{
     Radio radio;
 
 
-    public Inicializador(Radio r){
-        radio=r;
+    public Inicializador(){
+        radio = Radio.construirRadio();
 
     }
 
@@ -30,9 +30,8 @@ public class Inicializador extends Activity{
         return linea;
     }
 
-    public Radio obtenerDatos(String jsonStr) throws JSONException {
+    public void obtenerDatos(String jsonStr) throws JSONException {
         JSONObject jsonObj = new JSONObject(jsonStr);
-
 
         String nombreRadio = jsonObj.getString("name");
         String colorApp = jsonObj.getString("color");
@@ -54,8 +53,6 @@ public class Inicializador extends Activity{
         radio.setStreamURL(streamUrl);
         radio.setPuntoMontaje(puntoMontaje);
         radio.setDescripcion(descripcion);
-
-        return radio;
     }
 
 }

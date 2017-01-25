@@ -18,11 +18,12 @@ public class Reproductor extends Fragment {
     private Stream stream;
     private InterrupcionAudifonos interrupcionAudifonos;
 
-    public Reproductor() {}
+    public Reproductor() {
+        radio = Radio.construirRadio();
+    }
 
-    public static Reproductor newInstance(int sectionNumber, Radio r) {
+    public static Reproductor newInstance(int sectionNumber) {
         Reproductor reproductor = new Reproductor();
-        radio =r;
         Bundle args = new Bundle();
         args.putInt(ARG_SECTION_NUMBER, sectionNumber);
         reproductor.setArguments(args);
@@ -42,8 +43,8 @@ public class Reproductor extends Fragment {
         final Context context = this.getContext();
 
         try {
-            stream = new Stream(radio.getStreamURL(),context);
-            interrupcionAudifonos = new InterrupcionAudifonos(stream);
+            stream = Stream.construirStream(radio.getStreamURL(),context);
+            interrupcionAudifonos = new InterrupcionAudifonos(context);
 
         } catch (IOException e) {
             e.printStackTrace();
@@ -70,7 +71,6 @@ public class Reproductor extends Fragment {
                 stream.stop();
             }
         });
-
 
         return vistaRaiz;
     }

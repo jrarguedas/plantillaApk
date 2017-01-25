@@ -10,17 +10,25 @@ import java.io.IOException;
 
 public class Stream  extends Activity implements MediaPlayer.OnPreparedListener, MediaPlayer.OnBufferingUpdateListener {
 
+    private static Stream stream;
     private MediaPlayer mediaPlayer;
     private Uri uri;
-    private Context contextMain;
+    private Context contextoMain;
     private String urlRadio;
     private boolean pause;
 
-    public Stream(String url, Context context) throws IOException {
-        contextMain=context;
-        urlRadio=url;
+    private Stream(String url, Context nuevocontexto) throws IOException {
+        this.urlRadio = url;
+        this.contextoMain = nuevocontexto;
         inicializar();
-        pause = false;
+        this.pause = false;
+    }
+
+    public static Stream construirStream(String url, Context nuevocontexto) throws IOException {
+        if (stream == null){
+            stream = new Stream(url, nuevocontexto);
+        }
+        return stream;
     }
 
     public void inicializar() throws IOException {
@@ -30,12 +38,12 @@ public class Stream  extends Activity implements MediaPlayer.OnPreparedListener,
         try {
             mediaPlayer.setOnPreparedListener(this);
             mediaPlayer.setAudioStreamType(AudioManager.STREAM_MUSIC);
-            mediaPlayer.setDataSource(contextMain, uri);
+            mediaPlayer.setDataSource(contextoMain, uri);
             mediaPlayer.prepareAsync();
-            Toast.makeText(contextMain, "Cargando......", Toast.LENGTH_SHORT).show();
+            Toast.makeText(contextoMain, "Cargando......", Toast.LENGTH_SHORT).show();
 
         } catch (IOException e) {
-            Toast.makeText(contextMain, "La radio no esta transmitiendo", Toast.LENGTH_LONG).show();
+            Toast.makeText(contextoMain, "La radio no esta transmitiendo", Toast.LENGTH_LONG).show();
             e.printStackTrace();
         }
     }
@@ -46,7 +54,7 @@ public class Stream  extends Activity implements MediaPlayer.OnPreparedListener,
             pause=false;
         }
         else if(!estado()){
-            destruir(mediaPlayer);
+            destruir();
             inicializar();
             mediaPlayer.start();
         }
@@ -55,7 +63,7 @@ public class Stream  extends Activity implements MediaPlayer.OnPreparedListener,
 
     @Override
     public void onPrepared(MediaPlayer mp) {
-        Toast.makeText(contextMain, "Stream esta preparado", Toast.LENGTH_SHORT).show();
+        Toast.makeText(contextoMain, "Stream esta preparado", Toast.LENGTH_SHORT).show();
         mp.start();
     }
 
@@ -86,7 +94,7 @@ public class Stream  extends Activity implements MediaPlayer.OnPreparedListener,
         return false;
     }
 
-    public void destruir(MediaPlayer mediaPlayer){
+    public void destruir(){
         if(mediaPlayer != null){
             mediaPlayer.release();
             mediaPlayer = null;
@@ -95,7 +103,7 @@ public class Stream  extends Activity implements MediaPlayer.OnPreparedListener,
 
     @Override
     public void onBufferingUpdate(MediaPlayer mp, int percent) {
-        Toast.makeText(contextMain, "PlayerService onBufferingUpdate : " + percent + "%", Toast.LENGTH_LONG).show();
+        Toast.makeText(contextoMain, "PlayerService onBufferingUpdate : " + percent + "%", Toast.LENGTH_LONG).show();
     }
 
 }

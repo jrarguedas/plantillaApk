@@ -17,13 +17,14 @@ import android.widget.TextView;
 public class Informacion extends Fragment {
     private static final String ARG_SECTION_NUMBER = "section_number";
     private static Radio radio;
+
     public Informacion() {
+        radio = Radio.construirRadio();
 
     }
 
-    public static Informacion newInstance(int sectionNumber, Radio r) {
+    public static Informacion newInstance(int sectionNumber) {
         Informacion informacion = new Informacion();
-        radio =r;
         Bundle args = new Bundle();
         args.putInt(ARG_SECTION_NUMBER, sectionNumber);
         informacion.setArguments(args);
@@ -55,7 +56,6 @@ public class Informacion extends Fragment {
             urlRadio.setClickable(true);
             urlRadio.setMovementMethod (LinkMovementMethod.getInstance());
         }
-
 
         return vistaRaiz;
     }
