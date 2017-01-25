@@ -5,30 +5,6 @@
     android:layout_height="match_parent"
     android:background="@drawable/fondoreproductor">
 
-    <LinearLayout
-        android:layout_width="20dp"
-        android:layout_height="match_parent">
-
-    </LinearLayout>
-
-    <LinearLayout
-        android:layout_width="20dp"
-        android:layout_height="match_parent"
-        android:layout_alignParentTop="true"
-        android:layout_alignParentRight="true"
-        android:layout_alignParentEnd="true">
-
-    </LinearLayout>
-
-    <LinearLayout
-        android:layout_width="match_parent"
-        android:layout_height="20dp"
-        android:layout_alignParentTop="true"
-        android:layout_alignParentRight="true"
-        android:layout_alignParentEnd="true">
-
-    </LinearLayout>
-
     <RelativeLayout
         android:layout_marginTop="18dp"
         android:layout_marginLeft="23dp"
@@ -55,8 +31,7 @@
             android:layout_height="wrap_content"
             android:textColorLink="#ffffff"
             android:id="@+id/textoSolicitud"
-            android:textSize="@dimen/LinkReproductorTamañoLetra"
-            android:layout_weight="1"
+            android:textSize="18sp"
             android:layout_alignParentTop="true"
             android:layout_centerHorizontal="true"
             android:layout_marginTop="21dp" />
@@ -87,15 +62,32 @@
 
     </LinearLayout>
 
+
     <RelativeLayout
-        android:layout_width="300dp"
-        android:layout_marginBottom="94dp"
-        android:layout_alignParentBottom="true"
+        android:layout_height="100dp"
+        android:layout_marginTop="430dp"
+        android:layout_width="575dp">
+
+        <SeekBar
+            android:id="@+id/seekBar1"
+            android:layout_height="25dp"
+            android:max="10"
+            android:background="#d7d7d7"
+            android:layout_alignParentTop="true"
+            android:layout_alignParentLeft="true"
+            android:layout_alignParentStart="true"
+            android:layout_marginLeft="20dp"
+            android:layout_marginStart="20dp"
+            android:layout_width="600dp" />
+
+    </RelativeLayout>
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="150dp"
+        android:layout_below="@+id/linea"
         android:layout_alignParentLeft="true"
-        android:layout_alignParentStart="true"
-        android:layout_alignParentRight="true"
-        android:layout_alignParentEnd="true"
-        android:layout_height="150dp">
+        android:layout_alignParentStart="true">
 
         <ImageButton android:id="@+id/stop"
             android:src="@drawable/ic_reproductor_stop"
@@ -131,26 +123,6 @@
             android:layout_height="130dp"
             android:layout_alignParentTop="true"
             android:layout_centerHorizontal="true" />
-
-    </RelativeLayout>
-
-
-    <RelativeLayout
-        android:layout_height="100dp"
-        android:layout_marginTop="430dp"
-        android:layout_width="575dp">
-
-        <SeekBar
-            android:id="@+id/seekBar1"
-            android:layout_height="25dp"
-            android:max="10"
-            android:background="#d7d7d7"
-            android:layout_alignParentTop="true"
-            android:layout_alignParentLeft="true"
-            android:layout_alignParentStart="true"
-            android:layout_marginLeft="20dp"
-            android:layout_marginStart="20dp"
-            android:layout_width="600dp" />
 
     </RelativeLayout>
 

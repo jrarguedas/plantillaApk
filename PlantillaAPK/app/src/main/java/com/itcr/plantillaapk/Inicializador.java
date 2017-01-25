@@ -12,7 +12,6 @@ import java.io.InputStreamReader;
 public class Inicializador extends Activity{
     Radio radio;
 
-
     public Inicializador(){
         radio = Radio.construirRadio();
 
@@ -39,6 +38,10 @@ public class Inicializador extends Activity{
         String streamUrl = jsonObj.getString("stream_url");
         String puntoMontaje = jsonObj.getString("mountpoint");
         String descripcion = jsonObj.getString("description");
+
+        if (!paginaRadio.startsWith("http://") && !paginaRadio.startsWith("https://")){
+            paginaRadio = "http://" + paginaRadio;
+        }
 
         /*if (!nombreRadio.equals("")){radio.setNombre(nombreRadio);}
         if (!colorApp.equals("")){radio.setColor(colorApp);}
