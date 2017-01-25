@@ -34,8 +34,7 @@ public class StreamTest extends InstrumentationTestCase implements MediaPlayer.O
         MediaPlayer mediaPlayer = new MediaPlayer();
         String url ="http://stream.codigosur.org/RadioUniversidad.mp3";
         Uri uri = Uri.parse(url);
-        Stream stream =new Stream(url,getInstrumentation().getContext());
-
+        Stream stream = Stream.construirStream(url,getInstrumentation().getContext());
         mediaPlayer.setOnPreparedListener((MediaPlayer.OnPreparedListener) this);
         mediaPlayer.setAudioStreamType(AudioManager.STREAM_MUSIC);
         mediaPlayer.setDataSource(getInstrumentation().getContext(), uri);
@@ -56,7 +55,7 @@ public class StreamTest extends InstrumentationTestCase implements MediaPlayer.O
         MediaPlayer mediaPlayer = new MediaPlayer();
         String url ="http://stream.codigosur.org/RadioUniversidad.mp3";
         Uri uri = Uri.parse(url);
-        Stream stream =new Stream(url,getInstrumentation().getContext());
+        Stream stream = Stream.construirStream(url,getInstrumentation().getContext());
 
         mediaPlayer.setOnPreparedListener((MediaPlayer.OnPreparedListener) this);
         mediaPlayer.setAudioStreamType(AudioManager.STREAM_MUSIC);
@@ -74,7 +73,7 @@ public class StreamTest extends InstrumentationTestCase implements MediaPlayer.O
         MediaPlayer mediaPlayer = new MediaPlayer();
         String url ="http://stream.codigosur.org/RadioUniversidad.mp3";
         Uri uri = Uri.parse(url);
-        Stream stream =new Stream(url,getInstrumentation().getContext());
+        Stream stream = Stream.construirStream(url,getInstrumentation().getContext());
 
         mediaPlayer.setOnPreparedListener((MediaPlayer.OnPreparedListener) this);
         mediaPlayer.setAudioStreamType(AudioManager.STREAM_MUSIC);
@@ -101,7 +100,7 @@ public class StreamTest extends InstrumentationTestCase implements MediaPlayer.O
         MediaPlayer mediaPlayer = new MediaPlayer();
         String url ="http://stream.codigosur.org/RadioUniversidad.mp3";
         Uri uri = Uri.parse(url);
-        Stream stream =new Stream(url,getInstrumentation().getContext());
+        Stream stream = Stream.construirStream(url,getInstrumentation().getContext());
 
         mediaPlayer.setOnPreparedListener((MediaPlayer.OnPreparedListener) this);
         mediaPlayer.setAudioStreamType(AudioManager.STREAM_MUSIC);
@@ -120,7 +119,7 @@ public class StreamTest extends InstrumentationTestCase implements MediaPlayer.O
         MediaPlayer mediaPlayer = new MediaPlayer();
         String url ="http://stream.codigosur.org/RadioUniversidad.mp3";
         Uri uri = Uri.parse(url);
-        Stream stream =new Stream(url,getInstrumentation().getContext());
+        Stream stream = Stream.construirStream(url,getInstrumentation().getContext());
 
         mediaPlayer.setOnPreparedListener((MediaPlayer.OnPreparedListener) this);
         mediaPlayer.setAudioStreamType(AudioManager.STREAM_MUSIC);
@@ -128,7 +127,7 @@ public class StreamTest extends InstrumentationTestCase implements MediaPlayer.O
         mediaPlayer.prepareAsync();
         stream.play();
         stream.stop();
-        stream.destruir(mediaPlayer);
+        stream.destruir();
         assertTrue(mediaPlayer==null);
 
     }

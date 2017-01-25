@@ -28,7 +28,7 @@ public class ExampleUnitTest extends InstrumentationTestCase {
 
         MediaPlayer mediaPlayer = new MediaPlayer();
         String url ="http://stream.codigosur.org/espikafm.mp3";
-        Stream st = new Stream(url,getInstrumentation().getContext());
+        Stream st = Stream.construirStream(url,getInstrumentation().getContext());
         Uri uri = Uri.parse(url);
 
         try {
