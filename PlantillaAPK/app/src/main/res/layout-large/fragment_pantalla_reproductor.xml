@@ -46,20 +46,56 @@
         android:layout_alignParentEnd="true"
         android:layout_alignParentLeft="true"
         android:layout_alignParentStart="true"
-        android:layout_height="150dp">
+        android:layout_height="100dp">
 
 
+        <TextView
+            android:text="@string/solicitud"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textColorLink="#ffffff"
+            android:id="@+id/textoSolicitud"
+            android:textSize="@dimen/LinkReproductorTamañoLetra"
+            android:layout_weight="1"
+            android:layout_alignParentTop="true"
+            android:layout_centerHorizontal="true"
+            android:layout_marginTop="21dp" />
     </RelativeLayout>
+
+
+    <LinearLayout
+        android:id="@+id/linea"
+        android:layout_width="350dp"
+        android:background="#d7d7d7"
+        android:orientation="horizontal"
+        android:layout_height="5dp"
+        android:layout_marginTop="520dp"
+        android:layout_centerHorizontal="true"
+        android:layout_marginBottom="11dp">
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:id="@+id/linea2"
+        android:layout_width="350dp"
+        android:background="#d7d7d7"
+        android:orientation="horizontal"
+        android:layout_height="5dp"
+        android:layout_marginTop="675dp"
+        android:layout_centerHorizontal="true"
+        android:layout_marginBottom="11dp" >
+
+    </LinearLayout>
 
     <RelativeLayout
         android:layout_width="300dp"
         android:layout_marginBottom="94dp"
-        android:layout_height="200dp"
         android:layout_alignParentBottom="true"
         android:layout_alignParentLeft="true"
         android:layout_alignParentStart="true"
         android:layout_alignParentRight="true"
-        android:layout_alignParentEnd="true">
+        android:layout_alignParentEnd="true"
+        android:layout_height="150dp">
 
         <ImageButton android:id="@+id/stop"
             android:src="@drawable/ic_reproductor_stop"
@@ -95,18 +131,6 @@
             android:layout_height="130dp"
             android:layout_alignParentTop="true"
             android:layout_centerHorizontal="true" />
-
-        <TextView
-            android:text="@string/solicitud"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:textColorLink="#ffffff"
-            android:id="@+id/textoSolicitud"
-            android:textSize="@dimen/LinkReproductorTamañoLetra"
-            android:layout_weight="1"
-            android:layout_alignParentBottom="true"
-            android:layout_centerHorizontal="true"
-            android:layout_marginBottom="19dp" />
 
     </RelativeLayout>
 

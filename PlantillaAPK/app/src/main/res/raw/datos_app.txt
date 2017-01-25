@@ -1,1 +1,1 @@
-{"name": "Moraga", "color": "000000", "webpage": "kmoragas.com", "stream_url": "https://stream.codigosur.org/RadioUniversidad.mp3", "mountpoint": "RadioUniversidad", "description": "esta es la radio de moraga"}
+{"name": "Radio La Vecindaria", "color": "FF0000", "webpage": "http://lavecindaria.org.ar/", "stream_url": "https://stream.codigosur.org/lavecindaria.mp3", "mountpoint": "lavecindaria", "logo_url": "http://radio.codigosur.org/media/logos/2017/01/24/lavecindaria.jpg", "description": "Radio Comunitaria de Jos\u00e9 de la Quintana, C\u00f3rdoba."}

@@ -58,6 +58,33 @@
 
     </RelativeLayout>
 
+    <LinearLayout
+        android:id="@+id/linea"
+        android:layout_width="450dp"
+        android:background="#d7d7d7"
+        android:orientation="horizontal"
+        android:layout_height="5dp"
+        android:layout_marginTop="670dp"
+        android:layout_centerHorizontal="true"
+        android:layout_marginBottom="11dp">
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:id="@+id/linea2"
+        android:layout_width="450dp"
+        android:background="#d7d7d7"
+        android:orientation="horizontal"
+        android:layout_height="5dp"
+        android:layout_marginTop="890dp"
+        android:layout_centerHorizontal="true"
+        android:layout_marginBottom="11dp" >
+
+    </LinearLayout>
+
+
+
+
     <RelativeLayout
         android:layout_width="300dp"
         android:layout_height="300dp"

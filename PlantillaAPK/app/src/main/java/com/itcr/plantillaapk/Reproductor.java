@@ -9,7 +9,6 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ImageButton;
 import android.widget.TextView;
-
 import java.io.IOException;
 
 public class Reproductor extends Fragment {
@@ -59,11 +58,13 @@ public class Reproductor extends Fragment {
                 }
             }
         });
+
         imgPausa.setOnClickListener(new View.OnClickListener() {
             public void onClick(View view) {
                 stream.pause();
             }
         });
+
         imgStop.setOnClickListener(new View.OnClickListener() {
             public void onClick(View view) {
                 stream.stop();
