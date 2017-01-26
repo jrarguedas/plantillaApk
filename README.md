@@ -1,5 +1,5 @@
 # Plantilla Generadora de Apk
-  El proyecto consiste en un generador de apk's que permite a los oyentes de distintos streaming de radio escucharlos más facilmente; ya que este proyecto pretente que a los radioescuchas les sea más sencillo el poder escuchar su radio a través de una aplicación móvil, siendo esta una oportunidad para que las radios puedan atraer mayor cantidad de oyentes.
+  El proyecto consiste en un generador de apk's que permite a los oyentes escuchar el streaming de radio que más les gusta, más facilmente; ya que este proyecto pretente que a los radioescuchas les sea más sencillo el poder escuchar su radio a través de una aplicación móvil, siendo esta una oportunidad para que las radios puedan atraer mayor cantidad de oyentes.
 
 
 ## Herramientas
