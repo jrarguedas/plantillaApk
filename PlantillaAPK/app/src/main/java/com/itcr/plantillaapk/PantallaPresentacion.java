@@ -4,6 +4,11 @@ import android.content.Intent;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 
+/*
+Esta clase es la encargada de mostrar la pantalla de presentación, es una nueva actividad que se
+llama al iniciar la aplicación. Después de un determinado periodo de tiempo esta actividad se
+finaliza y llama a otra actividad (reproductor) para que continué el flujo de la APP.
+ */
 public class PantallaPresentacion extends AppCompatActivity {
 
     @Override

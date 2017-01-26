@@ -11,12 +11,7 @@ import java.io.IOException;
 
 import static org.junit.Assert.*;
 
-/**
- * Created by jrarguedas on 24/01/17.
- */
 public class StreamTest extends InstrumentationTestCase implements MediaPlayer.OnPreparedListener {
-
-
 
     public StreamTest() throws IOException {
     }

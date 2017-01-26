@@ -33,13 +33,14 @@ public class MainActivity extends AppCompatActivity {
         Toolbar barraTareas = (Toolbar) findViewById(R.id.toolbar);
         setSupportActionBar(barraTareas);
 
-        Inicializador inicicializador = new Inicializador();
+        ParseadorJson inicicializador = new ParseadorJson();
 
         try {
-            inicicializador.obtenerDatos(inicicializador.obtenerJson(this));
-        } catch (IOException e) {
-            e.printStackTrace();
+            inicicializador.obtenerJson(this);
+            inicicializador.obtenerAgregarDatos();
         } catch (JSONException e) {
+            e.printStackTrace();
+        } catch (IOException e) {
             e.printStackTrace();
         }
 

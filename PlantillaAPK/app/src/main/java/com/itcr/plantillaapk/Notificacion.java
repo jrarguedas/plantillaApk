@@ -8,6 +8,11 @@ import android.content.Intent;
 import android.graphics.drawable.BitmapDrawable;
 import android.support.v4.app.NotificationCompat;
 
+/*
+Esta clase es la encargada de mostrar la notificación a la hora de minimizar la APP, además esta
+sigue un patron de diseño Singleton debido a que solo se necesita un objeto de esta, y el mismo
+objeto es requerido en distintas clases.
+*/
 public class Notificacion {
 
     private static final int NOTIF_ALERTA_ID = 1;
@@ -27,6 +32,10 @@ public class Notificacion {
         return notificacion;
     }
 
+    /*
+    Este método es el  encargado de desplegar la notificación con los valores necesarios para este
+    caso (titulo, icono, texto, prioridad, entre otros).
+    */
     public void nuevaNotificacion(){
         NotificationCompat.Builder mBuilder =
                 new NotificationCompat.Builder(contextoMain)
@@ -56,6 +65,9 @@ public class Notificacion {
         administradorNotificaciones.notify(NOTIF_ALERTA_ID, mBuilder.build());
     }
 
+    /*
+    Este método es el encargado de destruir la notificación cuando ya no es necesario que se muestre.
+    */
     public void finalizarNotificacion(){
         if (administradorNotificaciones != null){
             administradorNotificaciones.cancel(NOTIF_ALERTA_ID);
