@@ -7,17 +7,21 @@ import android.text.method.LinkMovementMethod;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
-import android.widget.ImageView;
-import android.widget.ScrollView;
 import android.widget.TextView;
 
+/*
+Esta clase se encarga de crear la pantalla de información de la aplicación.
+ */
 public class Informacion extends Fragment {
     private static final String ARG_SECTION_NUMBER = "section_number";
     private static Radio radio;
 
+    /*
+    El constructor obtiene la información de la radio, esto es posible gracias a que la clase radio sigue
+    el patrón de diseño Singleton.
+     */
     public Informacion() {
         radio = Radio.construirRadio();
-
     }
 
     public static Informacion newInstance(int sectionNumber) {
@@ -28,6 +32,10 @@ public class Informacion extends Fragment {
         return informacion;
     }
 
+    /*
+    Este método es el encagado de crear la vista de la pantalla de Información, en caso de que se modifique el contenido
+    que posee esta pantalla es necesario modificar este método para mostrar dicha nueva información.
+     */
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
@@ -41,6 +49,11 @@ public class Informacion extends Fragment {
 
         descripcion.setText(radio.getDescripcion());
 
+        /*
+        Esta validación se realiza para chequear si el usuario, al momento de llenar el formulario ingresó la url
+        de su propia página. En caso de que si la ingresó, se crea un hipervínculo hacia esa url, en caso de no la
+        ingresó el hipervínculo no se muestra.
+         */
         if(!radio.getUrlPagina().equals("")){
             urlRadio.setText(Html.fromHtml("<a href=\""+ radio.getUrlPagina() + "\"> Visitanos en </a>"));
             urlRadio.setClickable(true);
