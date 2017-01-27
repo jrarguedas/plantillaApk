@@ -4,6 +4,14 @@ import android.content.Intent;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 
+
+/**
+ * *************************************************************
+ * Implementado por: José Arguedas, Denis Quesada, Jean Umaña. *
+ * *****************************************************+*******
+ **/
+
+
 /*
 Esta clase es la encargada de mostrar la pantalla de presentación, es una nueva actividad que se
 llama al iniciar la aplicación. Después de un determinado periodo de tiempo esta actividad se

@@ -11,6 +11,14 @@ import android.widget.ImageButton;
 import android.widget.TextView;
 import java.io.IOException;
 
+
+/**
+ * *************************************************************
+ * Implementado por: José Arguedas, Denis Quesada, Jean Umaña. *
+ * *****************************************************+*******
+ **/
+
+
 /*
 Esta clase se encarga de crear la pantalla de información de la aplicación.
  */
@@ -22,8 +30,9 @@ public class Reproductor extends Fragment {
     private InterrupcionAudifonos interrupcionAudifonos;
 
     /*
-    El constructor obtiene el objeto radio que se creó en la clase MainActivity, este objeto contiene toda la información
-    que se leyó del archivo Json y son los datos correspondientes a la radio que se escuchará con la aplicación.
+    El constructor obtiene el objeto radio que se creó en la clase MainActivity, este objeto
+    contiene toda la información que se leyó del archivo Json y son los datos correspondientes
+    a la radio que se escuchará con la aplicación.
      */
     public Reproductor() {
         radio = Radio.construirRadio();
@@ -38,11 +47,13 @@ public class Reproductor extends Fragment {
     }
 
     /*
-    Este método es el encagado de crear la vista de la pantalla de Reproducción, en caso de que se modifique el contenido
-    que posee esta pantalla es necesario modificar este método para mostrar dicha nueva información.
-    Desde este método se crea el objeto stream que es el encargado de manejar la lógica correspondiente al reproductor,
-    también es aquí donde se crea una instancia de la clase InterrupcionAudifonos que es la encargada de detener el
-    stream cuando los audífonos son retirados del dispositivo, para así evitar posibles momentos vergonzos al usuario
+    Este método es el encagado de crear la vista de la pantalla de Reproducción, en caso de que se
+    modifique el contenido que posee esta pantalla es necesario modificar este método para mostrar
+    dicha nueva información.
+    Desde este método se crea el objeto stream que es el encargado de manejar la lógica
+    correspondiente al reproductor, también es aquí donde se crea una instancia de la clase
+    InterrupcionAudifonos que es la encargada de detener el stream cuando los audífonos son
+    retirados del dispositivo, para así evitar posibles momentos vergonzos al usuario
     de la aplicación.
      */
     @Override
@@ -59,9 +70,9 @@ public class Reproductor extends Fragment {
 
         try {
             /*
-            Se instancia el objeto stream para controlar la lógica del reproductor y el objeto de la clase
-            IterrupcionAudifonos para controlar la interrupción correspondiente al retiro de los audífonos del
-            dispositivo.
+            Se instancia el objeto stream para controlar la lógica del reproductor y el objeto de
+            la clase IterrupcionAudifonos para controlar la interrupción correspondiente al retiro
+            de los audífonos del dispositivo.
              */
             stream = Stream.construirStream(radio.getStreamURL(),context);
             interrupcionAudifonos = new InterrupcionAudifonos();
@@ -70,8 +81,8 @@ public class Reproductor extends Fragment {
             e.printStackTrace();
         }
 
-        /*Aquí se inician el listener del botón play del reproductor, en caso de que estos botones sean presionados,
-         se ejecuta el método correspondiente en la clase stream.
+        /*Aquí se inician el listener del botón play del reproductor, en caso de que estos botones
+        sean presionados, se ejecuta el método correspondiente en la clase stream.
          */
         imgPlay.setOnClickListener(new View.OnClickListener() {
             public void onClick(View view) {
@@ -83,8 +94,8 @@ public class Reproductor extends Fragment {
             }
         });
 
-        /*Aquí se inician los listeners de los botones pausa y stop del reproductor, en caso de que estos botones
-        sean presionados, se ejecuta el método correspondiente en la clase stream.
+        /*Aquí se inician los listeners de los botones pausa y stop del reproductor, en caso de que
+        estos botones sean presionados, se ejecuta el método correspondiente en la clase stream.
          */
         imgPausa.setOnClickListener(new View.OnClickListener() {
             public void onClick(View view) {

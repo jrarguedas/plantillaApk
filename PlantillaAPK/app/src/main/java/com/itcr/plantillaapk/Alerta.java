@@ -6,9 +6,17 @@ import android.content.DialogInterface;
 import android.support.v7.app.AppCompatActivity;
 import java.io.IOException;
 
+
+/**
+ * *************************************************************
+ * Implementado por: José Arguedas, Denis Quesada, Jean Umaña. *
+ * *****************************************************+*******
+ **/
+
+
 /*
-Esta clase se encarga de mostrar un popup a la hora de clickear el botón Back del celular para confirmar
-si desea salir de la aplicación.
+Esta clase se encarga de mostrar un popup a la hora de clickear el botón Back del celular para
+confirmar si desea salir de la aplicación.
 */
 public class Alerta extends AppCompatActivity {
 

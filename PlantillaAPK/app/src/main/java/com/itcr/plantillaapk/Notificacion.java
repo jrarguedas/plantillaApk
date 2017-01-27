@@ -8,6 +8,14 @@ import android.content.Intent;
 import android.graphics.drawable.BitmapDrawable;
 import android.support.v4.app.NotificationCompat;
 
+
+/**
+ * *************************************************************
+ * Implementado por: José Arguedas, Denis Quesada, Jean Umaña. *
+ * *****************************************************+*******
+ **/
+
+
 /*
 Esta clase es la encargada de mostrar la notificación a la hora de minimizar la APP, además esta
 sigue un patron de diseño Singleton debido a que solo se necesita un objeto de esta, y el mismo
