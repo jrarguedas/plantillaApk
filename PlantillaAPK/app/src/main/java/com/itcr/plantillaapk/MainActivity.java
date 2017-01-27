@@ -12,8 +12,17 @@ import android.view.MenuItem;
 import org.json.JSONException;
 import java.io.IOException;
 
+
+/**
+ * *************************************************************
+ * Implementado por: José Arguedas, Denis Quesada, Jean Umaña. *
+ * *****************************************************+*******
+ **/
+
+
 /*
-Clase MainActivity de la aplicación, esta clase es el inicio del sistema y es aquí donde se crean los primeros elementos.
+Clase MainActivity de la aplicación, esta clase es el inicio del sistema y es aquí donde se crean
+los primeros elementos.
  */
 public class MainActivity extends AppCompatActivity {
     private Notificacion notificacion;
@@ -23,10 +32,11 @@ public class MainActivity extends AppCompatActivity {
     private ShareActionProvider shareAction;
 
     /*
-    El método onCreate se ejecuta al inicio de la aplicación, es aquí donde se inicializan todos los componentes necesarios
-    para la funcionalidad del sistema.
-    Es aquí donde se ejecuta el método para leer la información de la radio, además aquí es donde se crea el objeto
-    adaptadorPágina que es el encargado de mostrar las distintas pantallas de la aplicación.
+    El método onCreate se ejecuta al inicio de la aplicación, es aquí donde se inicializan todos
+    los componentes necesarios para la funcionalidad del sistema.
+    Es aquí donde se ejecuta el método para leer la información de la radio, además aquí es donde
+    se crea el objeto adaptadorPágina que es el encargado de mostrar las distintas pantallas de la
+    aplicación.
      */
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -56,9 +66,9 @@ public class MainActivity extends AppCompatActivity {
     }
 
     /*
-    Este método se encarga de crear una instancia de Alerta mostrando el método alertaSalir cuando se preciona el botón
-    "atrás" del dispositivo, esta alerta pide la confirmación del usuario para salir de la aplicación y termina la
-    ejecución del sistema en caso de que el usuario lo confirme.
+    Este método se encarga de crear una instancia de Alerta mostrando el método alertaSalir cuando
+    se preciona el botón "atrás" del dispositivo, esta alerta pide la confirmación del usuario para
+    salir de la aplicación y termina la ejecución del sistema en caso de que el usuario lo confirme.
      */
     @Override
     public void onBackPressed() {
@@ -66,10 +76,11 @@ public class MainActivity extends AppCompatActivity {
     }
 
     /*
-    Este método se encarga de crear una instancia de Notificación mostrando una notificación en la barra de tareas del
-    dispositivo cuando la aplicación pasa a ejecutarse a segundo plano, esta notificación no se puede eliminar de la barra
-    tareas para que el usuario no olvide que la aplicación se encuentra abierta. Cuando la aplicación se cierra por cualquier
-    medio, la notificación desaparace puesto que ya no es necesaria.
+    Este método se encarga de crear una instancia de Notificación mostrando una notificación en la
+    barra de tareas del dispositivo cuando la aplicación pasa a ejecutarse a segundo plano, esta
+    notificación no se puede eliminar de la barra tareas para que el usuario no olvide que la
+    aplicación se encuentra abierta. Cuando la aplicación se cierra por cualquier medio, la
+    notificación desaparace puesto que ya no es necesaria.
      */
     public void onPause(){
         notificacion.nuevaNotificacion();
@@ -77,9 +88,10 @@ public class MainActivity extends AppCompatActivity {
     }
 
     /*
-    Este método se ejecuta cuando la aplicación se cierra por cualquier medio, desde este método se elimina la notificación
-    de la barra de tareas que se muestra en caso de que el sistema estuviera en segundo plano, también se asegura que el
-    objeto stream es destruido para así liberar los recursos utilizados por el MediaPlayer para evitar memoryleaks.
+    Este método se ejecuta cuando la aplicación se cierra por cualquier medio, desde este método
+    se elimina la notificación de la barra de tareas que se muestra en caso de que el sistema
+    estuviera en segundo plano, también se asegura que el objeto stream es destruido para así
+    liberar los recursos utilizados por el MediaPlayer para evitar memoryleaks.
      */
     @Override
     protected void onDestroy() {
@@ -94,8 +106,8 @@ public class MainActivity extends AppCompatActivity {
     }
 
     /*
-    Este método se ejecuta cuando se recupera la aplicación desde segundo plano, la notificación que se muestra cuando
-    la aplicación se encuentra en segundo plano es eliminada.
+    Este método se ejecuta cuando se recupera la aplicación desde segundo plano, la notificación
+    que se muestra cuando la aplicación se encuentra en segundo plano es eliminada.
      */
     @Override
     protected void onRestart() {
@@ -104,8 +116,8 @@ public class MainActivity extends AppCompatActivity {
     }
 
     /*
-    Este método muestra los elementos que se encuentran en el layout menu.xml, en este caso muestra e inicia el botón
-    de compartir que se encuentra en la esquina superior derecha de la aplicación.
+    Este método muestra los elementos que se encuentran en el layout menu.xml, en este caso muestra
+    e inicia el botón de compartir que se encuentra en la esquina superior derecha de la aplicación.
      */
     @Override
     public boolean onCreateOptionsMenu(Menu menu) {
@@ -116,8 +128,8 @@ public class MainActivity extends AppCompatActivity {
         return true;
     }
     /*
-    Método que inicializa el listener del botón de compartir, aquí se instancia el mensaje con el que se compartirá
-    la emisora cuando el usuario de la aplicación así lo desee.
+    Método que inicializa el listener del botón de compartir, aquí se instancia el mensaje con el
+    que se compartirá la emisora cuando el usuario de la aplicación así lo desee.
      */
     private void share(){
         if (shareAction != null) {

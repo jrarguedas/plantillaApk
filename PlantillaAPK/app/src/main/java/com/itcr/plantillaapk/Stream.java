@@ -8,9 +8,18 @@ import android.net.Uri;
 import android.widget.Toast;
 import java.io.IOException;
 
+
+/**
+ * *************************************************************
+ * Implementado por: José Arguedas, Denis Quesada, Jean Umaña. *
+ * *****************************************************+*******
+ **/
+
+
 /*
-La clase stream maneja la lógica correspondiente al control del streaming que se escucha la aplicación, los botones que
-se encuentran en la pantalla de Reproductor, llaman a los métodos que se encuentran en esta clase.
+La clase stream maneja la lógica correspondiente al control del streaming que se escucha la
+aplicación, los botones que se encuentran en la pantalla de Reproductor, llaman a los métodos
+que se encuentran en esta clase.
 Esta clase también sigue el patrón de diseño Singleton.
  */
 public class Stream  extends Activity implements MediaPlayer.OnPreparedListener, MediaPlayer.OnBufferingUpdateListener {
@@ -24,8 +33,8 @@ public class Stream  extends Activity implements MediaPlayer.OnPreparedListener,
     private boolean pause;
 
     /*
-    Al crear un nuevo objeto stream, se pasa como parámetro la url donde se está reproduciendo el streaming y el
-    contexto en el que se encuentre.
+    Al crear un nuevo objeto stream, se pasa como parámetro la url donde se está reproduciendo el
+    streaming y el contexto en el que se encuentre.
      */
     private Stream(String url, Context nuevocontexto) throws IOException {
         this.urlRadio = url;
@@ -35,14 +44,15 @@ public class Stream  extends Activity implements MediaPlayer.OnPreparedListener,
     }
 
     /*
-    Este método se encarga de mantener el patrón de diseño Singleton, se necesita este patrón ya que la información que
-    se encuentra dentro del objeto de esta clase es requerida en otras.
+    Este método se encarga de mantener el patrón de diseño Singleton, se necesita este patrón ya
+    que la información que se encuentra dentro del objeto de esta clase es requerida en otras.
      */
     public static Stream construirStream(String url, Context nuevocontexto) throws IOException {
         /*
-        Si no se ha creado un objeto stream, entonces se ejecuta su constructor creando así una instancia de esta clase,
-        pero si ya se ha creado una instancia entonces es esa instancia la que se devuelve. Este es el patrón de diseño
-        Singleton, gracias a esto se puede referenciar a un mismo objeto desde distintas clases.
+        Si no se ha creado un objeto stream, entonces se ejecuta su constructor creando así una
+        instancia de esta clase, pero si ya se ha creado una instancia entonces es esa instancia
+        la que se devuelve. Este es el patrón de diseño Singleton, gracias a esto se puede
+        referenciar a un mismo objeto desde distintas clases.
          */
         if (stream == null){
             stream = new Stream(url, nuevocontexto);
@@ -51,8 +61,8 @@ public class Stream  extends Activity implements MediaPlayer.OnPreparedListener,
     }
 
     /*
-    El método inicializar se encarga de realizar la conexión a la url desde donde se puede escuchar el streaming de la
-    radio.
+    El método inicializar se encarga de realizar la conexión a la url desde donde se puede escuchar
+    el streaming de la radio.
      */
     public void inicializar() throws IOException {
         mediaPlayer = new MediaPlayer();//Se utiliza un objeto MediaPlayer para la reproducción del streaming.
@@ -73,8 +83,9 @@ public class Stream  extends Activity implements MediaPlayer.OnPreparedListener,
     }
 
     /*
-    El método play reinicia la reproducción del streaming en caso de que este se encontrara en estado de pausa, si el
-    streaming se encuentra detenido se encarga de inicializar de nuevo el streaming y comenzar su reproducción.
+    El método play reinicia la reproducción del streaming en caso de que este se encontrara en
+    estado de pausa, si el streaming se encuentra detenido se encarga de inicializar de nuevo el
+    streaming y comenzar su reproducción.
     Este método se ejecuta cuando se presiona el botón de play en la pantalla de Reproductor.
      */
     public void play() throws IOException {
@@ -91,11 +102,12 @@ public class Stream  extends Activity implements MediaPlayer.OnPreparedListener,
     }
 
     /*
-    Cuando se inicia el objeto mediaPlayer en el método inicializar, este debe prepararse para poder empezar la reproducción,
-    se utiliza el método prepareAsync() para llevar a cabo la prepración del MediaPlayer, este método realiza la preparación
-    con un hilo distinto al hilo principal, mejorando así la eficiencia del programa. Cuando la preparación se ha finalizado
-    ese hilo secundario ejecuta este método onPrepared, aquí se muestra un mensaje indicando que ya se puede terminó de preparar
-    el reproductor.
+    Cuando se inicia el objeto mediaPlayer en el método inicializar, este debe prepararse para
+    poder empezar la reproducción, se utiliza el método prepareAsync() para llevar a cabo la
+    prepración del MediaPlayer, este método realiza la preparación con un hilo distinto al hilo
+    principal, mejorando así la eficiencia del programa. Cuando la preparación se ha finalizado
+    ese hilo secundario ejecuta este método onPrepared, aquí se muestra un mensaje indicando que ya
+    se puede terminó de preparar el reproductor.
      */
     @Override
     public void onPrepared(MediaPlayer mp) {
@@ -104,8 +116,8 @@ public class Stream  extends Activity implements MediaPlayer.OnPreparedListener,
     }
 
     /*
-    El método pause se ejecuta cuando se presiona el botón de pausa de la pantalla Reproductor, si el streaming se encuentra
-    reproduciendo, este se pausará.
+    El método pause se ejecuta cuando se presiona el botón de pausa de la pantalla Reproductor, si
+    el streaming se encuentra reproduciendo, este se pausará.
      */
     public void pause(){
         if(mediaPlayer!=null && estado()){
@@ -116,8 +128,8 @@ public class Stream  extends Activity implements MediaPlayer.OnPreparedListener,
     }
 
     /*
-    El método stop se ejecuta cuando se presiona el botón de stop de la pantalla Reproductor, si el streaming se encuentra
-    reproduciendo, este se detendrá.
+    El método stop se ejecuta cuando se presiona el botón de stop de la pantalla Reproductor, si el
+    streaming se encuentra reproduciendo, este se detendrá.
      */
     public void stop(){
         if (mediaPlayer!=null){
@@ -141,8 +153,8 @@ public class Stream  extends Activity implements MediaPlayer.OnPreparedListener,
     }
 
     /*
-    El método destruir se utiliza para finalizar el objeto mediaPlayer, liberando así recursos del dispositivo
-    y evitando memoryleaks.
+    El método destruir se utiliza para finalizar el objeto mediaPlayer, liberando así recursos del
+    dispositivo y evitando memoryleaks.
      */
     public void destruir(){
         if(mediaPlayer != null){

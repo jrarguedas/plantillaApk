@@ -9,6 +9,14 @@ import java.io.IOException;
 import java.io.InputStream;
 import java.io.InputStreamReader;
 
+
+/**
+ * *************************************************************
+ * Implementado por: José Arguedas, Denis Quesada, Jean Umaña. *
+ * *****************************************************+*******
+ **/
+
+
 /*
 Esta clase se encarga de parsear el JSON, le un archivo que contiene el JSON y lo procesa.
 Además estos valores obtenidos son asignados a un objeto Radio.

@@ -1,10 +1,18 @@
 package com.itcr.plantillaapk;
 
+
+/**
+ * *************************************************************
+ * Implementado por: José Arguedas, Denis Quesada, Jean Umaña. *
+ * *****************************************************+*******
+ **/
+
+
 /*
-La clase radio es la que contiene la información que se leyó desde el archivo Json, son los datos correspondientes
-a la radio que se puede escuchar con la aplicación.
-Esta clase sigue el patrón de diseño Singleton para mejorar el proceso de ejecución del código de la aplicación en
-general.
+La clase radio es la que contiene la información que se leyó desde el archivo Json, son los datos
+correspondientes a la radio que se puede escuchar con la aplicación.
+Esta clase sigue el patrón de diseño Singleton para mejorar el proceso de ejecución del código de
+la aplicación en general.
  */
 public class Radio {
     /*
@@ -15,9 +23,9 @@ public class Radio {
 
     private Radio() {}
     /*
-    Este método se encarga de implementar el patrón de diseño Singleton, de esta forma se puede utilizar el mismo objeto
-    radio desde cualquier parte del código de la aplicación ya que devuelve el mismo objeto radio que se crea la primera
-    vez que se llama este método.
+    Este método se encarga de implementar el patrón de diseño Singleton, de esta forma se puede
+    utilizar el mismo objeto radio desde cualquier parte del código de la aplicación ya que
+    devuelve el mismo objeto radio que se crea la primera vez que se llama este método.
      */
     public static Radio construirRadio() {
         if (radio == null){

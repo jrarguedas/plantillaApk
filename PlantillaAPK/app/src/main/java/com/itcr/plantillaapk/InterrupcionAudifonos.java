@@ -4,9 +4,17 @@ import android.content.Context;
 import android.content.Intent;
 import java.io.IOException;
 
+
+/**
+ * *************************************************************
+ * Implementado por: José Arguedas, Denis Quesada, Jean Umaña. *
+ * *****************************************************+*******
+ **/
+
+
 /*
-Esta clase se realiza para contemplar el caso de que se retiren los audífonos mientras el stream se encuentra
-reproduciendo, si esto sucede, el stream se detiene.
+Esta clase se realiza para contemplar el caso de que se retiren los audífonos mientras el stream
+se encuentra reproduciendo, si esto sucede, el stream se detiene.
  */
 public class InterrupcionAudifonos extends android.content.BroadcastReceiver {
 
